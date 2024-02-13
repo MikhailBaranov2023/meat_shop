@@ -1,0 +1,42 @@
+{% extends 'order/base.html' %}
+{% block content %}
+    {% include 'order/includes/inc_order.html' %}
+    <div class="container">
+        <div class="col-12 mb-5">
+            {% if user.is_authenticated %}
+                <a class='btn btn-outline-primary' href="{% url 'product:date_list' %}">Cоздать заказ</a>
+            {% endif %}
+        </div>
+        <div class="row text-center ">
+            {% for object in object_list %}
+                <div class="col-6">
+                    <div class="card-title mb-4 shadow-sm">
+                        <h4 class="my-0 font-weight-normal">Дата заказа - {{ object.date.date }} </h4>
+                    </div>
+                    <div class="card-body mb-4 box-shadow">
+                        <h6>({{ object.date.half_carcasses }}) - {{ object.half_carcasses_quantity }}кг</h6>
+                        <h6>({{ object.date.by_product }}) - {{ object.by_product_quantity }}кг </h6>
+                        {% if object.status == 'accepted' %}
+                            <h6> Принят в работу</h6>
+                        {% elif object.status == 'completed' %}
+                            <h6>Исполнено</h6>
+                        {% elif object.status == 'cancel' %}
+                            <h6>Заказ отменен</h6>
+                        {% endif %}
+                        <h6>Описание заказа: {{ object.description }}</h6>
+                        <h6 class="text-muted">Заказчик
+                            : {{ object.user.first_name }} {{ object.user.last_name }}
+                            - {{ object.user.phone }}</h6>
+                    </div>
+                    <div class="card-footer">
+                        <h6>Общая стоимость заказа</h6>
+                    </div>
+                    <div class="card-footer">
+                        <a class="p-2 btn btn-outline-primary" href="{% url 'order:order_delete' object.pk %}">Отменить
+                            заказ</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

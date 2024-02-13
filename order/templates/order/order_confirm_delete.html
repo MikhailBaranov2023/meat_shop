@@ -1,0 +1,20 @@
+{% extends 'order/base.html' %}
+{% block content %}
+    {% include 'order/includes/inc_order.html' %}
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <h3>Хотите удалить заказ на "{{ object.date.date }}" ?</h3>
+                            <button type="submit" class="btn btn-danger">Подтвердить</button>
+                            <a href="{% url 'order:home' %}" class="btn btn-warning"> Отмена</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

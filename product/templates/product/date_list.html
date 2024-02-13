@@ -1,0 +1,28 @@
+{% extends 'order/base.html' %}
+{% block content %}
+    {% include 'order/includes/inc_order.html' %}
+    <div class="container">
+        <div class="col-12 mb-5">
+        </div>
+        <div class="row text-center">
+            {% for object in object_list %}
+                <div class="col-6">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            {{ object.date }}
+                            <hr>
+                            {{ object.half_carcasses }} - доступно {{ object.half_carcasses_quantity }}
+                            <hr>
+                            {{ object.by_product }} - доступно {{ object.by_product_quantity }}
+                        </h4>
+                    </div>
+
+                    <div class="card-footer">
+                        <a class="p-2 btn btn-outline-primary" href="{% url 'order:order_create' object.pk %}">Заказать на эту дату</a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+{% endblock %}
