@@ -41,5 +41,5 @@ class Date(models.Model):
         return f'{self.date}  {self.half_carcasses} - доступно({self.half_carcasses_quantity}кг)  и {self.by_product} - доступно({self.by_product_quantity}кг)'
 
     class Meta:
-        verbose_name = 'дата'
-        verbose_name_plural = 'даты'
+        verbose_name = 'доступные даты для заказа'
+        verbose_name_plural = 'доступные даты для заказа'

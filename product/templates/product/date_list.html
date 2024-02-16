@@ -2,27 +2,83 @@
 {% block content %}
     {% include 'order/includes/inc_order.html' %}
     <div class="container">
-        <div class="col-12 mb-5">
-        </div>
-        <div class="row text-center">
-            {% for object in object_list %}
-                <div class="col-6">
-                <div class="card mb-4 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">
-                            {{ object.date }}
-                            <hr>
-                            {{ object.half_carcasses }} - доступно {{ object.half_carcasses_quantity }}
-                            <hr>
-                            {{ object.by_product }} - доступно {{ object.by_product_quantity }}
-                        </h4>
-                    </div>
+        <div class="calendar">
 
-                    <div class="card-footer">
-                        <a class="p-2 btn btn-outline-primary" href="{% url 'order:order_create' object.pk %}">Заказать на эту дату</a>
-                    </div>
-                </div>
-            {% endfor %}
+            <div class="month_and_year">
+                <a class="button" href="{% url 'product:current_month' %}"><<</a>
+                {% if current_month %}
+                    {{ current_month_title }}
+                {% elif next_month %}
+                    {{ next_month_title }}
+                {% endif %}
+                <a class="button" href="{% url 'product:next_month' %}">>></a>
+            </div>
+            <div class="days-of-week-container">
+                <div>ПН</div>
+                <div>ВТ</div>
+                <div>СР</div>
+                <div>ЧТ</div>
+                <div>ПТ</div>
+                <div>СБ</div>
+                <!-- список дней недели -->
+                <div>ВС</div>
+            </div>
+            <div class="calendar-container">
+                {% if current_month %}
+                    {% for week in current_month %}
+                        {% for day in week %}
+                            <div>
+                                {% if day == 0 %}
+                                    <p></p>
+                                {% else %}
+                                    <p>{{ day }}</p>
+                                    <p></p>
+                                {% endif %}
+                                {% for object in object_list %}
+                                    {% if object.date.month == number_mount %}
+                                        {% if object.date.day == day %}
+                                            <a href="{% url 'product:detect_date' object.pk %}">
+                                                <span>{{ object.half_carcasses_quantity }}</span>
+                                            </a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% elif next_month %}
+                    {% for week in next_month %}
+                        {% for day in week %}
+                            <div>
+                                {% if day == 0 %}
+                                    <p></p>
+                                {% else %}
+                                    <p>{{ day }}</p>
+                                {% endif %}
+                                {% for object in object_list %}
+                                    {% if object.date.month == number_mount %}
+                                        {% if object.date.day == day %}
+                                            <a href="{% url 'product:detect_date' object.pk %}">
+                                                <span>{{ object.half_carcasses_quantity }}</span>
+                                            </a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
+    </div>
+    <div class="calendar">
+    </div>
+    <div class="data">
+        <p>{{ object.date.day }}</p>
+        <span>{{ object.half_carcasses_quantity }}</span>
+    </div>
+    <button class="button" href="#">
+        Подтвердить
+    </button>
+    </div>
 {% endblock %}

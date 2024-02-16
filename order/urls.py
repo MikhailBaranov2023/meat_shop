@@ -6,6 +6,6 @@ app_name = OrderConfig.name
 
 urlpatterns = [
     path('', OderListView.as_view(), name='home'),
-    path('create/<int:pk>/', OrderCreateView.as_view(), name='order_create'),
+    path('create/', OrderCreateView.as_view(), name='order_create'),
     path('delete/<int:pk>/', OrderDeleteView.as_view(), name='order_delete'),
 ]
