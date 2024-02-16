@@ -27,7 +27,6 @@ class DateList(generic.ListView):
         context_data['current_month'] = calendar[0]
         context_data['current_month_title'] = calendar[2]
         context_data['number_mount'] = calendar[4]
-        print(context_data['number_mount'])
         return context_data
 
 
@@ -65,7 +64,6 @@ def next_month(request):
         'number_mount': calendar[4] + 1,
 
     }
-    print(context['number_mount'])
     return render(request, 'product/date_list.html', context)
 
 

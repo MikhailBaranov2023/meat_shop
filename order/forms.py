@@ -12,4 +12,4 @@ class FormStileMixin:
 class OrderForm(FormStileMixin, forms.ModelForm):
     class Meta:
         model = Order
-        exclude = ('user', 'status', )
+        exclude = ('user', 'status',)

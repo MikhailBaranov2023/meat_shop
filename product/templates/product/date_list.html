@@ -73,12 +73,17 @@
     </div>
     <div class="calendar">
     </div>
-    <div class="data">
-        <p>{{ object.date.day }}</p>
-        <span>{{ object.half_carcasses_quantity }}</span>
-    </div>
-    <button class="button" href="#">
-        Подтвердить
-    </button>
-    </div>
+    {% if object %}
+        <div class="data">
+            <p>{{ object.date.day }}</p>
+            <span>{{ object.half_carcasses_quantity }}</span>
+        </div>
+        <a class="button" href="{% url 'order:order_create' object.pk %}">Подтвердить</a>
+    {% else %}
+        <div class="data">
+            <p></p>
+            <span></span>
+        </div>
+    {% endif %}
+
 {% endblock %}
