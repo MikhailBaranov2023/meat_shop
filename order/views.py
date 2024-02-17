@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from order.models import Order
 from order.forms import OrderForm
@@ -12,7 +12,7 @@ from django.forms import ValidationError
 
 class OderListView(ListView):
     model = Order
-    template_name = 'order/index.html'
+    template_name = 'order/order_list.html'
 
 
 class OrderCreateView(CreateView):
@@ -41,7 +41,10 @@ class OrderDeleteView(DeleteView):
         elif self.object.user != self.request.user:
             raise Http404
 
+    def form_valid(self, form):
+        cancel_order(self.object.date, self.object.half_carcasses_quantity, self.object.by_product_quantity)
+        return super().form_valid(form)
 
-def form_valid(self, form):
-    cancel_order(self.object.date, self.object.half_carcasses_quantity, self.object.by_product_quantity)
-    return super().form_valid(form)
+
+def main_page(request):
+    return render(request, template_name='order/index.html')
