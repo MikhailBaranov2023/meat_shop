@@ -11,6 +11,7 @@ class CreateDate(generic.CreateView):
     model = Date
     form_class = DateForm
     success_url = reverse_lazy('order:home')
+    template_name = 'product/administration.html'
 
 
 class DateDetailView(generic.DetailView):
@@ -78,3 +79,26 @@ def current_month(request):
 
     }
     return render(request, 'product/date_list.html', context, )
+
+
+def add_norm_to_day(requests):
+    calendar = create_calendar()
+    half_carcasses = HalfCarcasses.objects.all()
+    by_product = ByProduct.objects.all()
+
+    context = {
+        'current_month': calendar[0],
+        'current_month_title': calendar[2],
+        'half_carcasses': half_carcasses,
+        'by_product': by_product,
+    }
+    return render(requests, template_name='product/day_norm.html', context=context)
+
+
+def add_norm_to_day_next_month(request):
+    calendar = create_calendar()
+    context = {
+        'next_month': calendar[1],
+        'next_month_title': calendar[3],
+    }
+    return render(request, template_name='product/day_norm.html', context=context)

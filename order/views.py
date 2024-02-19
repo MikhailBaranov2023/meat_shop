@@ -47,4 +47,5 @@ class OrderDeleteView(DeleteView):
 
 
 def main_page(request):
+
     return render(request, template_name='order/index.html')

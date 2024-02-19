@@ -1,5 +1,6 @@
 import calendar
 import datetime
+from .models import Date
 
 
 def create_calendar():
@@ -30,3 +31,10 @@ def create_calendar():
     call_list = [first_call, second_call, current_month_title, next_month_title, current_month]
 
     return call_list
+
+
+def create_more_date(date: list, half_carcasses_quantity, by_product_quantity, half_carcasses_pk, by_product_pk):
+    for day in date:
+        Date.objects.create(Date=day, half_carcasses=half_carcasses_pk, by_product=by_product_pk,
+                            half_carcasses_quantity=half_carcasses_quantity,
+                            by_product_quantity=by_product_quantity)

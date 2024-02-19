@@ -1,0 +1,86 @@
+{% load static %}
+{% include 'order/includes/inc_order.html' %}
+{% csrf_token %}
+<div class="container">
+    <form class="calendar">
+        <form method="post">
+            <div class="container">
+                <h1>Выберите продукты</h1>
+                {% for object in half_carcasses %}
+                    <input id="html" type="checkbox" name="half_carcasses"/>
+                    <label for="html">{{ object }}</label>
+                {% endfor %}
+                <div class="container">
+                    <input id="html" type="number" name="half_carcasses_quantity"/>
+                    <label for="html">Введите количество</label>
+                </div>
+            </div>
+            <div class="container">
+                {% for object in by_product %}
+                    <input id="html" type="checkbox" name='by_product'>
+                    <label for="html">{{ object }}</label>
+                {% endfor %}
+                <div class="container">
+                    <input id="html" type="number" name="by_product_quantity">
+                    <label for="html">Введите количество</label>
+                </div>
+            </div>
+            <input id="html" type="submit">
+        </form>
+        <div class="month_and_year">
+            <a class="button" href="{% url 'product:add_norm_to_day' %}"><<</a>
+            {% if current_month %}
+                {{ current_month_title }}
+            {% elif next_month %}
+                {{ next_month_title }}
+            {% endif %}
+
+            <a class="button" href="{% url 'product:add_norm_to_day_next_month' %}">>></a>
+        </div>
+        <div class="days-of-week-container">
+            <div>ПН</div>
+            <div>ВТ</div>
+            <div>СР</div>
+            <div>ЧТ</div>
+            <div>ПТ</div>
+            <div>СБ</div>
+            <!-- список дней недели -->
+            <div>ВС</div>
+        </div>
+        <div class="calendar-container">
+            {% if current_month %}
+                {% for week in current_month %}
+                    {% for day in week %}
+                        <div>
+                            {% if day == 0 %}
+                                <p></p>
+                            {% else %}
+                                {% csrf_token %}
+                                <a href=""><p>{{ day }}</p></a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+            {% if next_month %}
+                {% for week in next_month %}
+                    {% for day in week %}
+                        <div>
+                            {% if day == 0 %}
+                                <p></p>
+                            {% else %}
+                                <p>{{ day }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="data">
+            <p></p>
+        </div>
+        <button type="submit" class="btn" href="#">
+            Подтвердить
+        </button>
+</div>
+</div>
