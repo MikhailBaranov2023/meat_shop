@@ -3,15 +3,15 @@
 
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
     <nav class="ms-5">
-{#        {% if user.is_staff %}#}
-{#            <div class="admin">Панель администратора</div>#}
-{#            <div class="nav">#}
-{#                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:add_norm_to_day' %}">Установка нормы на день</a>#}
-{#                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Установка нормы на#}
-{#                    месяц</a>#}
-{#                <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:home' %}">Контакты</a>#}
-{#            </div>#}
-{#        {% else %}#}
+        {% if user.is_staff %}
+            <div class="admin">Панель администратора</div>
+            <div class="nav">
+                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:create_date_current_month' %}">Установка нормы на день</a>
+                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Установка нормы на
+                    месяц</a>
+                <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:home' %}">Контакты</a>
+            </div>
+        {% else %}
             <div class="nav">
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:order_list' %}">Мои заказы</a>
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Заказать</a>
@@ -27,6 +27,6 @@
                     </h4>
                 </div>
             </div>
-{#        {% endif %}#}
+        {% endif %}
     </nav>
 </div>

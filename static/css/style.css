@@ -106,7 +106,7 @@ svg {
     height: 30px;
 }
 
-p {
+.calendar-data {
     width: 50px;
     height: 50px;
     display: flex;
@@ -116,7 +116,7 @@ p {
     font-size: 11px;
 }
 
-span {
+.span {
     width: 20px;
     height: 15px;
     border-radius: 8px;
@@ -125,24 +125,35 @@ span {
     bottom: -3px;
     background: #f0cf60;
     font-size: 8px;
+    color: black;
+    padding-top: 3px;
 }
 
-.order {
+.span-order {
     width: 60px;
     height: 45px;
     border-radius: 10px;
+    text-align: center;
+    font-size: 28px;
+    color: black;
+   padding-top: 8px;
 }
 
 .data {
-    padding: 1px 0 0 25px;
     width: 150px;
     height: 150px;
     border-radius: 20px;
     background: #bfbfbf;
-    color: white;
+    color: black;
     margin: 0 auto;
-    font-size: 36px;
     position: relative;
+}
+
+.data-order {
+    color: black;
+    width: 100%;
+    padding: 15px 0 0 15px;
+    font-size: 38px;
 }
 
 .btn {
@@ -152,12 +163,15 @@ span {
     font-size: 20px;
     border: none;
     box-sizing: border-box;
-    margin: 15px auto;
+    margin: 15px 8px;
     display: block;
+     outline-style: none;
+    text-decoration: none;
 }
 
 a {
     text-decoration: none;
+    outline-style: none;
 }
 
 a:hover {
@@ -195,4 +209,14 @@ a:active {
 .menu {
     text-align: center;
     margin-bottom: 40px;
+}
+
+.admin {
+    padding: 15px 30px 15px;
+    background: red;
+    color: black;
+}
+
+.color {
+     background: #e19133;
 }

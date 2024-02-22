@@ -31,7 +31,7 @@ class ByProduct(models.Model):
 
 
 class Date(models.Model):
-    date = models.DateField(verbose_name='дата', **NULLABLE)
+    date = models.DateField(verbose_name='дата', unique=True, **NULLABLE)
     half_carcasses = models.ForeignKey(HalfCarcasses, on_delete=models.CASCADE, verbose_name='полутуши', **NULLABLE)
     half_carcasses_quantity = models.IntegerField(verbose_name='доступное количество в кг', **NULLABLE)
     by_product = models.ForeignKey(ByProduct, on_delete=models.CASCADE, verbose_name='субпродукты', **NULLABLE)
