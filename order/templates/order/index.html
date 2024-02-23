@@ -7,7 +7,7 @@
             <div class="admin">Панель администратора</div>
             <div class="nav">
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:create_date_current_month' %}">Установка нормы на день</a>
-                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Установка нормы на
+                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:add_current_month' %}">Установка нормы на
                     месяц</a>
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:home' %}">Контакты</a>
             </div>
@@ -15,7 +15,6 @@
             <div class="nav">
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:order_list' %}">Мои заказы</a>
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Заказать</a>
-                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_add' %}">Администратор</a>
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:home' %}">Контакты</a>
                 <div class="info">
                     <h4>Предварительные заказы будут

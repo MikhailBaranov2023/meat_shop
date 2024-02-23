@@ -1,0 +1,87 @@
+{% include 'order/includes/inc_order.html' %}
+
+<div class="container">
+    <div class="calendar">
+        <div class="month_and_year">
+            <a class="button" href="{% url 'product:add_current_month' %}"><<</a>
+            {% if current_month %}
+                {{ current_month_title }}
+            {% elif next_month %}
+                {{ next_month_title }}
+            {% endif %}
+            <a class="button" href="{% url 'product:add_next_month' %}">>></a>
+        </div>
+        <div class="days-of-week-container">
+            <div>ПН</div>
+            <div>ВТ</div>
+            <div>СР</div>
+            <div>ЧТ</div>
+            <div>ПТ</div>
+            <div>СБ</div>
+            <!-- список дней недели -->
+            <div>ВС</div>
+        </div>
+        <div class="calendar-container">
+            {% if current_month %}
+                {% for week in current_month %}
+                    {% for day in week %}
+                        <div>
+                            {% if day == 0 %}
+                            {% else %}
+                                <p>{{ day }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% elif next_month %}
+                {% for week in next_month %}
+                    {% for day in week %}
+                        <div>
+                            {% if day == 0 %}
+                            {% else %}
+                                <p>{{ day }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <nav class="ms-5">
+            <div class="nav nav-admin">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="btn item btn-item">
+                        <select class="products" name="half_carcasses" id="container">
+                            {% for obj in half_carcasses %}
+                                <option value={{ obj.pk }}>{{ obj }}</option>
+                            {% endfor %}
+                        </select>
+                        <input class="span-order-admin" type="text" name='half_carcasses_quantity' placeholder="50">
+                    </div>
+                    <div class="p-2 btn item btn-item">
+                        <select class="products" name="by_product" id="container">
+                            {% for obj in by_product %}
+                                <option value={{ obj.pk }}>{{ obj }}</option>
+                            {% endfor %}
+                        </select>
+                        <input class="span-order-admin" type="text" name="by_product_quantity" placeholder="30">
+
+                    </div>
+                    {% if current_month %}
+                        <button class="btn hover" type="submit" name="month"
+                                value='{"days":{{ current_month }},"month": {{ number_mount }}, "year" : {% now 'Y' %}}'>
+                            Подтвердить
+                        </button>
+                    {% elif next_month %}
+                        <button class="btn hover" type="submit" name="month"
+                                value='{"days":{{ next_month }},"month": {{ number_mount }}, "year" : {% now 'Y' %}}'>
+                            Подтвердить
+                        </button>
+                    {% endif %}
+                </form>
+            </div>
+        </nav>
+    </div>
+</div>

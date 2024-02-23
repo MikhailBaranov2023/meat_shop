@@ -1,6 +1,6 @@
 import calendar
-import datetime
 from .models import Date
+import datetime
 
 
 def create_calendar():
@@ -51,8 +51,36 @@ def create_calendar():
     return call_list
 
 
-def create_more_date(date: list, half_carcasses_quantity, by_product_quantity, half_carcasses_pk, by_product_pk):
-    for day in date:
-        Date.objects.create(Date=day, half_carcasses=half_carcasses_pk, by_product=by_product_pk,
-                            half_carcasses_quantity=half_carcasses_quantity,
-                            by_product_quantity=by_product_quantity)
+def parse_month(dict_month: dict):
+    days_list = []
+    date_list = []
+    for week in dict_month['days']:
+        for day in week:
+            if day == 0:
+                continue
+            else:
+                if day < 10:
+                    days_list.append('0' + str(day))
+                else:
+                    days_list.append(str(day))
+    month = str(dict_month['month'])
+    year = str(dict_month['year'])
+    for day in days_list:
+        date_str_obj = f'{year}-{month}-{day}'
+        date_obj = datetime.datetime.strptime(date_str_obj, '%Y-%m-%d').date()
+        date_list.append(date_obj)
+    return date_list
+
+
+def create_multiple_date(date_list: list, half_carcasses_int, by_product_int, half_carcasses_quantity,
+                         by_product_quantity):
+    for d in date_list:
+        if d < datetime.date.today():
+            continue
+        else:
+            if Date.objects.filter(date=d).exists():
+                continue
+            else:
+                Date.objects.create(date=d, half_carcasses_id=half_carcasses_int, by_product_id=by_product_int,
+                                    half_carcasses_quantity=half_carcasses_quantity,
+                                    by_product_quantity=by_product_quantity)

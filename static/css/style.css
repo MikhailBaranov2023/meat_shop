@@ -62,9 +62,9 @@ svg {
     font-size: 20px;
 }
 
-.button {
-    padding: 0 5px;
-}
+/*.button {*/
+/*    padding: 0 5px;*/
+/*}*/
 
 .days-of-week-container,
 .calendar-container {
@@ -94,7 +94,6 @@ svg {
     background-color: #fc0000;
     color: rgba(0, 0, 0, 0.76);
     cursor: pointer;
-
 }
 
 .calendar-container div {
@@ -114,6 +113,10 @@ svg {
     justify-content: flex-start;
     padding: 2px 0 0 5px;
     font-size: 11px;
+}
+
+.btn_admin {
+     all: unset;
 }
 
 .span {
@@ -157,21 +160,24 @@ svg {
 }
 
 .btn {
-    padding: 15px 90px;
+    padding: 13px 0;
     border-radius: 50px;
     background: #bfbfbf;
     font-size: 20px;
     border: none;
     box-sizing: border-box;
-    margin: 15px 8px;
+    margin: 15px auto;
     display: block;
-     outline-style: none;
+    outline-style: none;
     text-decoration: none;
+    width: 298px;
+    height: 45px;
 }
 
 a {
     text-decoration: none;
     outline-style: none;
+    color: black;
 }
 
 a:hover {
@@ -202,7 +208,7 @@ a:active {
     padding: 25px 0;
 }
 
-.info h4 {
+.info h4:first-child {
     margin-bottom: 20px;
 }
 
@@ -215,8 +221,75 @@ a:active {
     padding: 15px 30px 15px;
     background: red;
     color: black;
+    margin-bottom: 15px;
 }
 
 .color {
      background: #e19133;
+}
+
+.item {
+    background: #e19133;
+    padding-left: 20px;
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    margin: 7px auto;
+    color: black;
+    width: 298px;
+    height: 45px;
+}
+
+.item:first-child {
+    margin-bottom: 20px;
+}
+
+.item-last {
+    margin-bottom: 40px;
+}
+
+.span-order-admin {
+    position: absolute;
+    left: calc(70%); top: calc(0%);
+    width: 89px;
+    height: 45px;
+    background: #bfbfbf;
+    border-radius: 50px;
+    text-align: center;
+    /*padding-top: 10px;*/
+    border: none;
+}
+
+.products {
+    width: 180px;
+    height: 45px;
+    background: #e19133;
+    color: black;
+    border: none;
+    outline-style: none;
+}
+
+.data-admin {
+    width: 170px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.nav-admin {
+    padding: 0;
+}
+
+::placeholder {
+    color: rgba(255, 0, 0, 0.6);
+}
+
+.hover:hover {
+    font-size: 24px;
+    transition: 1.5s;
+}
+
+.btn-item {
+    padding: 0 0 0 20px;
 }
