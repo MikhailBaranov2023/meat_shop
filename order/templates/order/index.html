@@ -6,26 +6,45 @@
         {% if user.is_staff %}
             <div class="admin">Панель администратора</div>
             <div class="nav">
-                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:create_date_current_month' %}">Установка нормы на день</a>
-                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:add_current_month' %}">Установка нормы на
+                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:create_date_current_month' %}">Установка
+                    нормы на день</a>
+                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:add_current_month' %}">Установка нормы
+                    на
                     месяц</a>
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:home' %}">Контакты</a>
             </div>
         {% else %}
-            <div class="nav">
-                <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:order_list' %}">Мои заказы</a>
-                <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Заказать</a>
-                <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:home' %}">Контакты</a>
-                <div class="info">
-                    <h4>Предварительные заказы будут
-                        подтверждены, но в случае
-                        форс-мажора возможны изменения
-                        объема. Мы сообщим вам об этом.</h4>
-                    <h4>
-                        Субпродукты отдаем по возможности.
-                    </h4>
+            {% if user.is_auth %}
+                <div class="nav">
+                    <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:order_list' %}">Мои заказы</a>
+                    <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Заказать</a>
+                    <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:contact' %}">Контакты</a>
+                    <div class="info">
+                        <h4>Предварительные заказы будут
+                            подтверждены, но в случае
+                            форс-мажора возможны изменения
+                            объема. Мы сообщим вам об этом.</h4>
+                        <h4>
+                            Субпродукты отдаем по возможности.
+                        </h4>
+                    </div>
                 </div>
-            </div>
+            {% else %}
+                <div class="nav">
+                    <a class="menu p-2 btn btn-outline-primary" href="{% url 'users:login' %}">Мои заказы</a>
+                    <a class="menu p-2 btn btn-outline-primary" href="{% url 'users:login' %}">Заказать</a>
+                    <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:contact' %}">Контакты</a>
+                    <div class="info">
+                        <h4>Предварительные заказы будут
+                            подтверждены, но в случае
+                            форс-мажора возможны изменения
+                            объема. Мы сообщим вам об этом.</h4>
+                        <h4>
+                            Субпродукты отдаем по возможности.
+                        </h4>
+                    </div>
+                </div>
+            {% endif %}
         {% endif %}
     </nav>
 </div>

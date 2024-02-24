@@ -139,7 +139,7 @@ svg {
     text-align: center;
     font-size: 28px;
     color: black;
-   padding-top: 8px;
+    padding-top: 8px;
 }
 
 .data {
@@ -200,6 +200,11 @@ a:active {
     max-width: 300px;
 }
 
+.nav-info {
+    padding: 8px 0;
+    max-width: 300px;
+}
+
 .info {
     border-radius: 30px;
     background: #e19133;
@@ -208,9 +213,41 @@ a:active {
     padding: 25px 0;
 }
 
-.info h4:first-child {
-    margin-bottom: 20px;
+.info-title {
+    border-bottom: 2px solid black;
+    font-weight: 700;
+    width: 136px;
+    margin: 0 auto;
 }
+
+.info-contacts {
+    width: 84px;
+}
+
+.card-title {
+    margin-bottom: 6px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.btn-info {
+    margin-top: 15px;
+    width: 250px;
+    padding: 11px 0;
+}
+
+.footer-info {
+    padding: 20px 0 10px;
+}
+
+/*.info h4:first-child {*/
+/*    margin-bottom: 20px;*/
+/*}*/
 
 .menu {
     text-align: center;
@@ -240,12 +277,21 @@ a:active {
     height: 45px;
 }
 
+.info-text {
+    border: none;
+    border-radius: 30px;
+    height: 150px;
+    text-align: center;
+    outline-style: none;
+    padding: 0;
+}
+
 .item:first-child {
     margin-bottom: 20px;
 }
 
 .item-last {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .span-order-admin {
@@ -292,4 +338,25 @@ a:active {
 
 .btn-item {
     padding: 0 0 0 20px;
+}
+
+.map {
+    display: grid;
+    justify-content: space-between;
+}
+
+.map-title {
+    font-weight: 700;
+}
+
+.map-text {
+    font-weight: 300;
+}
+
+.map-card {
+    width: 298px;
+    height: 200px;
+    border-radius: 30px;
+    margin-top: 10px;
+    overflow: hidden;
 }
