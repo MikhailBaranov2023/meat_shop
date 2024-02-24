@@ -2,9 +2,7 @@
 {% block content %}
     <div class="container">
         <div class="col-12 mb-5 nav">
-            {% if user.is_authenticated %}
-                <a class='btn btn-outline-primary' href="{% url 'product:date_list' %}">Cоздать заказ</a>
-            {% endif %}
+            <a class='btn btn-outline-primary' href="{% url 'product:date_list' %}">Cоздать заказ</a>
         </div>
         <div class="row text-center ">
             {% for object in object_list %}
@@ -17,27 +15,20 @@
                         {% elif object.status == 'cancel' %}
                             <h4 class="info-title">Заказ отменен</h4>
                         {% endif %}
-                        <span class="my-0 font-weight-normal info-title-date">дата{{ object.date.date }} </span>
+                        <span class="my-0 font-weight-normal info-title-date">дата: {{ object.date.date }} </span>
                     </div>
                     <div class="card-body mb-4 box-shadow">
                         <div class="info-grid">
                             <h6>({{ object.date.half_carcasses }}) - {{ object.half_carcasses_quantity }}кг</h6>
                             <h6>({{ object.date.by_product }}) - {{ object.by_product_quantity }}кг </h6>
                         </div>
-{#                        {% if object.status == 'accepted' %}#}
-{#                            <h4 class="card-title"> Принят в работу</h4>#}
-{#                        {% elif object.status == 'completed' %}#}
-{#                            <h4 class="card-title">Исполнено</h4>#}
-{#                        {% elif object.status == 'cancel' %}#}
-{#                            <h4 class="card-title">Заказ отменен</h4>#}
-{#                        {% endif %}#}
                         <h6 class="card-title">Описание заказа: {{ object.description }}</h6>
                         <h6 class="text-muted card-title">Заказчик
                             : {{ object.user.first_name }} {{ object.user.last_name }}
-                            - {{ object.user.phone }}</h6>
-                    </div>
-                    <div class="card-footer">
-                        <h6 class="card-title">Общая стоимость заказа</h6>
+                        </h6>
+                        <h6>
+                            Телефон - {{ object.user.phone }}
+                        </h6>
                     </div>
                     <div class="card-footer">
                         <a class="p-2 btn btn-info btn-outline-primary" href="{% url 'order:order_delete' object.pk %}">Отменить

@@ -14,7 +14,7 @@
                 <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:home' %}">Контакты</a>
             </div>
         {% else %}
-            {% if user.is_auth %}
+            {% if user.is_authenticated %}
                 <div class="nav">
                     <a class="menu p-2 btn btn-outline-primary" href="{% url 'order:order_list' %}">Мои заказы</a>
                     <a class="menu p-2 btn btn-outline-primary" href="{% url 'product:date_list' %}">Заказать</a>
