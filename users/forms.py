@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from users.models import User
+from users.models import User, CompanyCard
 from django import forms
+from django.forms import ModelForm
 
 
 class FormStileMixin:
@@ -25,3 +26,9 @@ class UserProfileForm(UserChangeForm):
         super().__init__(*args, **kwargs)
 
         self.fields['password'].widget = forms.HiddenInput()
+
+
+class CompanyCArdForm(ModelForm, FormStileMixin):
+    class Meta:
+        model = CompanyCard
+        exclude = ('user',)
