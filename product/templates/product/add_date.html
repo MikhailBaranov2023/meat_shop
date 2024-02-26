@@ -1,7 +1,7 @@
 {% include 'order/includes/inc_order.html' %}
 
-<div class="container">
-    <div class="admin">Панель администратора</div>
+<div class="container nav">
+    <div class="admin hvr-wobble-skew">Панель администратора</div>
     <div class="calendar">
         <div class="month_and_year">
             <a class="button" href="{% url 'product:create_date_current_month' %}"><<</a>
@@ -101,7 +101,6 @@
     </div>
     <div class="container">
         <div class="data data-admin">
-            {#            <h4>Вы выбрали даты:</h4>#}
             <span>
                     {% for date in date_list %}
                         {{ date }},
@@ -120,7 +119,7 @@
                                 <option value={{ obj.pk }}>{{ obj }}</option>
                             {% endfor %}
                         </select>
-                        <input class="span-order-admin" type="text" name='half_carcasses_quantity' placeholder="50">
+                        <input class="span-order-admin" type="text" name="half_carcasses_quantity" placeholder="50шт">
                     </div>
                     <div class="p-2 btn item btn-item">
                         <select class="products" name="by_product" id="container">
@@ -128,9 +127,9 @@
                                 <option value={{ obj.pk }}>{{ obj }}</option>
                             {% endfor %}
                         </select>
-                        <input class="span-order-admin" type="text" name="by_product_quantity" placeholder="30">
+                        <input class="span-order-admin" type="text" name="by_product_quantity" placeholder="30шт">
                     </div>
-                    <button class="btn hover" type="submit" name="confirm" value="True">
+                    <button class="btn hvr-shadow hvr-back-pulse" type="submit" name="confirm" value="True">
                         Подтвердить
                     </button>
                 </form>

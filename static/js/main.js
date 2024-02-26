@@ -1,74 +1,63 @@
-// let nowDate = new Date(),
-//     nowDateNumber = nowDate.getDate(),
-//     nowMonth = nowDate.getMonth(),
-//     nowYear = nowDate.getFullYear(),
-//     container = document.getElementById('month-calendar'),
-//     monthContainer = container.getElementsByClassName('month-name')[0],
-//     yearContainer = container.getElementsByClassName('year-name')[0],
-//     daysContainer = container.getElementsByClassName('days')[0],
-//     prev = container.getElementsByClassName('prev')[0],
-//     next = container.getElementsByClassName('next')[0],
-//     monthName = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+window.onload = function () {
+
+    var data = []
+
+    function submitButtonStyle(element) {
+        element.style.backgroundColor = "red";
+        data.push(+element.innerText);
+        console.log(data);
+        console.log(data[2]);
+    }
+
+    let order = document.getElementById('delete');
+    let blockNone = document.getElementById('blockNone');
+    let block = document.getElementById('dNone')
+
+    order.onclick = function () {
+        blockNone.classList.add('d-none');
+        block.classList.replace('d-none', 'display');
+    }
+
+
+}
+
+// _thisdocument.getElementsByClassName('.calendar-data').addEventListener('click', (event) => {
+//     let value = event.target.value;
+//     console.log(value)
+// });
+
+// window.addEventListener('DOMContentLoaded', () => {
+//     const buttons = document.querySelectorAll('.calendar-data')
+//     const rowSelector = document.querySelector('.block__row')
+//     let newValues = ['2', '567', 'Т333', 'csdf', 'sdfdsggg', 'ertretret']
 //
-//
-// let curDate = nowDate.setMonth(nowDate.getMonth() - 1);
-// console.log(nowDate.getFullYear());
-//
-// function setMonthCalendar(year, month) {
-//     let monthDays = new Date(year, month + 1, 0).getDate(),
-//         monthPrefix = new Date(year, month, 0).getDay(),
-//         monthDaysText = '';
-//
-//     monthContainer.textContent = monthName[month];
-//     yearContainer.textContent = year;
-//     daysContainer.innerHTML = '';
-//
-//     if (monthPrefix > 0) {
-//         for (let i = 1; i <= monthPrefix; i++) {
-//             monthDaysText += '<a href="#" class="day"><li><div class="count"></div></li></a>';
+//     function changeValue(btn, newArr) {
+//         for (let i = 0; i < btn.length; i++) {
+//             btn[i].setAttribute('value', newArr[i])
 //         }
 //     }
 //
-//     for (let i = 1; i <= monthDays; i++) {
-//         monthDaysText += '<a href="http://localhost:8000/create/" class="day"><li>' + i + '<div class="count">33</div></li></a>';
+//     function consoleOutput(parentSelector) {
+//         parentSelector.addEventListener('click', (e) => {
+//             if (!e.target.matches('button')) return
+//             changeValue(buttons, newValues)
+//             console.log(e.target.getAttribute('value'))
+//         })
 //     }
+//     consoleOutput(rowSelector)
+// })
+
+// window.addEventListener('DOMContentLoaded', () => {
 //
-//     daysContainer.innerHTML = monthDaysText;
+//     const buttons = document.querySelectorAll('.calendar-data')
+//     let newValues = [ ]
 //
-//     if (month == nowMonth && year == nowYear) {
-//         days = daysContainer.getElementsByTagName('li');
-//         days[monthPrefix + nowDateNumber - 1].classList.add('date-now');
+//     for (let i =0; i < buttons.length; i++) {
+//         buttons[i].addEventListener('click', () => {
+//             buttons.forEach((item, i) => {
+//                 item.setAttribute('value', newValues[i])
+//             })
+//             console.log(buttons[i].getAttribute('value'))
+//         })
 //     }
-// }
-//
-// setMonthCalendar(nowYear, nowMonth);
-//
-// prev.onclick = function () {
-//     let curDate = new Date(yearContainer.textContent, monthName.indexOf(monthContainer.textContent));
-//
-//     curDate.setMonth(curDate.getMonth() - 1);
-//
-//     let curYear = curDate.getFullYear(),
-//         curMonth = curDate.getMonth();
-//
-//     setMonthCalendar(curYear, curMonth);
-// }
-//
-// next.onclick = function () {
-//     let curDate = new Date(yearContainer.textContent, monthName.indexOf(monthContainer.textContent));
-//
-//     curDate.setMonth(curDate.getMonth() + 1);
-//
-//     let curYear = curDate.getFullYear(),
-//         curMonth = curDate.getMonth();
-//
-//     setMonthCalendar(curYear, curMonth);
-// }
-
-var date = []
-
-function submitButtonStyle(element) {
-    element.style.backgroundColor = "red";
-    date.push(element.innerText)
-    console.log(date);
-}
+// })

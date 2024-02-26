@@ -1,6 +1,6 @@
 {% include 'order/includes/inc_order.html' %}
 
-<div class="container">
+<div class="container nav">
     <div class="calendar">
         <div class="month_and_year">
             <a class="button" href="{% url 'product:current_month' %}"><<</a>
@@ -93,7 +93,7 @@
                             <input class="item info-text" type="text" name='description'
                                    placeholder="Заметки к заказу">
                         </div>
-                        <button class="btn" name="date" value='{{ object.pk }}'>
+                        <button class="btn hvr-shadow hvr-back-pulse" name="date" value='{{ object.pk }}'>
                             Заказать
                         </button>
                     </div>

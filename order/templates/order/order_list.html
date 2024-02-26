@@ -1,12 +1,13 @@
 {% include 'order/includes/inc_order.html' %}
+
 {% block content %}
     <div class="container">
         <div class="col-12 mb-5 nav">
-            <a class='btn btn-outline-primary' href="{% url 'product:date_list' %}">Cоздать заказ</a>
+            <a class='btn hvr-shadow hvr-back-pulse' href="{% url 'product:date_list' %}">Cоздать заказ</a>
         </div>
-        <div class="row text-center ">
+        <div class="row text-center nav"  id="blockNone">
             {% for object in object_list %}
-                <div class="col-6 info footer-info">
+                <div class="col-6 info footer-info mb-2">
                     <div class="card-title mb-4 shadow-sm">
                         {% if object.status == 'accepted' %}
                             <h4 class="info-title"> Принят в работу</h4>
@@ -19,23 +20,38 @@
                     </div>
                     <div class="card-body mb-4 box-shadow">
                         <div class="info-grid">
-                            <h6>({{ object.date.half_carcasses }}) - {{ object.half_carcasses_quantity }}кг</h6>
-                            <h6>({{ object.date.by_product }}) - {{ object.by_product_quantity }}кг </h6>
+                            <h5>({{ object.date.half_carcasses }}) - {{ object.half_carcasses_quantity }}кг</h5>
+                            <h5>({{ object.date.by_product }}) - {{ object.by_product_quantity }}кг </h5>
                         </div>
-                        <h6 class="card-title">Описание заказа: {{ object.description }}</h6>
-                        <h6 class="text-muted card-title">Заказчик
+                        <h5 class="card-title">Описание заказа: {{ object.description }}</h5>
+                        <h5 class="text-muted card-title">Заказчик
                             : {{ object.user.first_name }} {{ object.user.last_name }}
-                        </h6>
-                        <h6>
+                        </h5>
+                        <h5>
                             Телефон - {{ object.user.phone }}
-                        </h6>
+                        </h5>
                     </div>
                     <div class="card-footer">
-                        <a class="p-2 btn btn-info btn-outline-primary" href="{% url 'order:order_delete' object.pk %}">Отменить
-                            заказ</a>
+                        <a class="p-2 btn btn-info hvr-shadow hvr-back-pulse" id="delete">
+                            Отменить заказ
+                        </a>
                     </div>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+    <div class="container nav">
+        <div class="info d-none" id="dNone">
+            <div class="col-lg-6 col-md-8 col-7 text-center">
+                <div class="">
+                    <h4 class="info-title card-title w-100">Заказ принят</h4>
+                    <h5 class="card-title">Мясная продукция на вас уже заказана,
+                    удалить возможно лишь за 24 часа до
+                    поставки.</h5>
+                    <h5 class="card-title">Просьба связать по номеру:</h5>
+                    <h4 class="card-title">+7-951-555-55-55</h4>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

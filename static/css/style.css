@@ -11,19 +11,82 @@
 
 body {
     background: #2e3132;
-    font-family: sans-serif;
+    font-family: Stengazeta sans-serif;
 }
 
-.header {
-    /*background: #5AAE18;*/
-    background: #6ba452;
+.mb-2 {
+    margin-bottom: 20px;
 }
 
 .login {
     background: #6ba452;
     border: none;
     cursor: pointer;
-        margin: 0 10px 45px 0;
+    margin: 0 10px 45px 0;
+}
+
+#id_password,
+#id_username,
+#id_phone,
+#id_password1,
+#id_password2,
+#id_first_name,
+#id_last_name,
+#id_city {
+    margin: 0 0 20px 25px;
+    border-radius: 10px;
+    border: none;
+    height: 25px;
+    width: 170px;
+}
+
+#id_password1,
+#id_password {
+   margin:  0 -7px 10px 30px;
+}
+
+#id_password2 {
+    margin: 5px 23px 10px 28px
+}
+
+#id_city {
+    margin: 5px 23px 10px 28px
+}
+
+#id_first_name {
+    margin:  0 0 20px 55px;
+}
+
+input[type="text"],
+input[type="password"] {
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+input {
+    outline: none;
+}
+
+.helptext {
+    font-size: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    list-style: none;
+    color: rgba(0, 0, 0, 0.4);
+    font-style: oblique 40deg;
+}
+
+.hvr-back-pulse:active, .hvr-back-pulse:focus, .hvr-back-pulse:hover {
+    background: #6ba452;
+    border-radius: 30px;
+}
+
+@keyframes hvr-back-pulse {
+50% {
+    background: #3c602e;
+}
 }
 
 .header__container {
@@ -31,6 +94,8 @@ body {
     align-items: center;
     gap: 10px;
     color: white;
+    background: #6ba452;
+    height: 80px;
 }
 
 svg {
@@ -38,14 +103,9 @@ svg {
     width: 300px;
 }
 
-.container__index2 {
-    background: #2e3132;
-    margin: 0 auto;
-}
-
 .container {
     margin: 0 auto;
-    width: 94%;
+    width: 100%;
     padding: 15px 0;
 }
 
@@ -61,10 +121,6 @@ svg {
     margin-bottom: 15px;
     font-size: 20px;
 }
-
-/*.button {*/
-/*    padding: 0 5px;*/
-/*}*/
 
 .days-of-week-container,
 .calendar-container {
@@ -86,12 +142,11 @@ svg {
 
 .days-of-week-container {
     margin-bottom: 15px;
-    /*font-weight: 600;*/
 }
 
 
 .calendar-container div:hover {
-    background-color: #fc0000;
+    background-color: red;
     color: rgba(0, 0, 0, 0.76);
     cursor: pointer;
 }
@@ -160,7 +215,7 @@ svg {
 }
 
 .btn {
-    padding: 13px 0;
+    padding: 10px 0;
     border-radius: 50px;
     background: #bfbfbf;
     font-size: 20px;
@@ -170,8 +225,9 @@ svg {
     display: block;
     outline-style: none;
     text-decoration: none;
-    width: 298px;
+    width: 284px;
     height: 45px;
+    text-align: center;
 }
 
 a {
@@ -197,7 +253,7 @@ a:active {
 
 .nav {
     padding: 25px 0;
-    max-width: 300px;
+    width: 300px;
 }
 
 .nav-info {
@@ -210,18 +266,14 @@ a:active {
     background: #e19133;
     text-align: center;
     font-weight: 500;
-    padding: 25px 0;
+    padding: 25px 5px;
 }
 
 .info-title {
     border-bottom: 2px solid black;
     font-weight: 700;
-    width: 136px;
+    width: 126px;
     margin: 0 auto;
-}
-
-.info-contacts {
-    width: 84px;
 }
 
 .card-title {
@@ -232,7 +284,6 @@ a:active {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 10px;
-    align-items: center;
 }
 
 .btn-info {
@@ -245,20 +296,18 @@ a:active {
     padding: 20px 0 10px;
 }
 
-/*.info h4:first-child {*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
 .menu {
     text-align: center;
     margin-bottom: 40px;
 }
 
 .admin {
-    padding: 15px 30px 15px;
+    padding: 5px 0;
     background: red;
     color: black;
-    margin-bottom: 15px;
+    width: 250px;
+    margin: 0 0 14px 24px;
+    text-align: center;
 }
 
 .color {
@@ -286,9 +335,9 @@ a:active {
     padding: 0;
 }
 
-.item:first-child {
-    margin-bottom: 20px;
-}
+/*.item:first-child {*/
+/*    margin-bottom: 20px;*/
+/*}*/
 
 .item-last {
     margin-bottom: 20px;
@@ -340,6 +389,34 @@ a:active {
     padding: 0 0 0 20px;
 }
 
+.ml-2 {
+    margin-left: 23px;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.pt-4 {
+    padding-top: 40px;
+}
+
+.w {
+    width: 131px
+}
+
+.w-100 {
+    width: 100px
+}
+
+.w-map {
+    width: 284px;
+}
+
 .map {
     display: grid;
     justify-content: space-between;
@@ -354,9 +431,17 @@ a:active {
 }
 
 .map-card {
-    width: 298px;
-    height: 200px;
+    width: 284px;
+    height: 400px;
     border-radius: 30px;
     margin-top: 10px;
     overflow: hidden;
+}
+
+.d-none {
+    display: none;
+}
+
+.display {
+    display: block;
 }
