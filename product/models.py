@@ -11,7 +11,7 @@ class HalfCarcasses(models.Model):
     price = models.PositiveIntegerField(default=0, verbose_name='цена за кг', **NULLABLE)
 
     def __str__(self):
-        return f'Полутуши {self.price}руб/кг'
+        return f'Полутуши '
 
     class Meta:
         verbose_name = 'полутуша'
@@ -23,7 +23,7 @@ class ByProduct(models.Model):
     price = models.PositiveIntegerField(default=0, verbose_name='цена за кг', **NULLABLE)
 
     def __str__(self):
-        return f'{(self.title).title()}- {self.price}руб/кг'
+        return f'{(self.title).title()} '
 
     class Meta:
         verbose_name = 'субпродукты'

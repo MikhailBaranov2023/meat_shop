@@ -14,6 +14,7 @@ class DateForm(forms.ModelForm, FormStileMixin):
         model = Date
         fields = "__all__"
 
+
 class HalfCarcassesForm(FormStileMixin, forms.ModelForm):
     class Meta:
         model = HalfCarcasses

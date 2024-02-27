@@ -28,7 +28,7 @@ class UserProfileForm(UserChangeForm):
         self.fields['password'].widget = forms.HiddenInput()
 
 
-class CompanyCArdForm(ModelForm, FormStileMixin):
+class CompanyCardForm(ModelForm, FormStileMixin):
     class Meta:
         model = CompanyCard
         exclude = ('user',)

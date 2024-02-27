@@ -1,8 +1,11 @@
+from django.core.exceptions import PermissionDenied
+from django.shortcuts import redirect
 from django.views.generic import CreateView, UpdateView
 from users.models import User, CompanyCard
-from users.forms import UserRegisterForm, UserProfileForm, CompanyCArdForm
+from users.forms import UserRegisterForm, UserProfileForm, CompanyCardForm
 from django.urls import reverse_lazy
 from django.forms import inlineformset_factory
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class RegisterView(CreateView):
@@ -12,7 +15,7 @@ class RegisterView(CreateView):
     template_name = 'users/register.html'
 
 
-class ProfileView(UpdateView):
+class ProfileView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserProfileForm
     success_url = reverse_lazy('users:profile')
@@ -22,7 +25,7 @@ class ProfileView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
-        CompanyCardFormset = inlineformset_factory(User, CompanyCard, form=CompanyCArdForm, extra=1)
+        CompanyCardFormset = inlineformset_factory(User, CompanyCard, form=CompanyCardForm, extra=1)
         if self.request.method == 'POST':
             formset = CompanyCardFormset(self.request.POST, instance=self.object)
         else:

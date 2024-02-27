@@ -25,6 +25,7 @@ class Order(models.Model):
                              **NULLABLE)
     status = models.CharField(default=STATUS_ACCEPTED, choices=STATUSES, verbose_name='статус заказа')
     description = models.TextField(max_length=500, verbose_name='описание', **NULLABLE)
+    cancel_date = models.DateField(verbose_name='крайняя дата отмены заказа', **NULLABLE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='пользователь', on_delete=models.CASCADE,
                              **NULLABLE)
 

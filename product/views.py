@@ -1,16 +1,17 @@
-from django.http import Http404
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Date, ByProduct, HalfCarcasses
-from .forms import HalfCarcassesForm
 from django.urls import reverse_lazy
 from product.services import create_calendar, parse_month, create_multiple_date
 import datetime
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError, PermissionDenied
 import json
 from order.services import create_order
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+@login_required
 def create_date_current_month(request, date_list=[]):
     if request.user.is_staff:
         """Выбираем даты для добавления в текущем месяце"""
@@ -19,7 +20,7 @@ def create_date_current_month(request, date_list=[]):
         by_product = ByProduct.objects.all()
         if request.method == 'GET':
             date_list = []
-        if request.method == 'POST':
+        elif request.method == 'POST':
             try:
                 if 'date' in request.POST.keys():
                     str_date = request.POST['date']
@@ -39,27 +40,27 @@ def create_date_current_month(request, date_list=[]):
                     create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
                                          by_product_int=by_product_int, half_carcasses_quantity=half_carcasses_quantity,
                                          by_product_quantity=by_product_quantity)
+                    date_list = []
             except ValueError:
                 redirect(reverse_lazy('product:create_date_current_month'))
-        else:
-            date_list = []
 
-            context = {
-                'current_month': calendar[0],
-                'current_month_title': calendar[2],
-                'number_mount': calendar[4],
-                'current_month_title_two': calendar[5],
-                'date_list': date_list,
-                'half_carcasses': half_carcasses,
-                'by_product': by_product,
-            }
+        context = {
+            'current_month': calendar[0],
+            'current_month_title': calendar[2],
+            'number_mount': calendar[4],
+            'current_month_title_two': calendar[5],
+            'date_list': date_list,
+            'half_carcasses': half_carcasses,
+            'by_product': by_product,
+        }
 
-            return render(request, 'product/add_date.html', context=context)
+        return render(request, 'product/add_date.html', context=context)
 
     else:
-        raise Http404
+        return redirect('order:home')
 
 
+@login_required
 def create_date_next_month(request, date_list=[]):
     """Выбираем даты для добавления в слудеюзщем месяце месяце"""
     if request.user.is_staff:
@@ -68,7 +69,7 @@ def create_date_next_month(request, date_list=[]):
         by_product = ByProduct.objects.all()
         if request.method == 'GET':
             date_list = []
-        if request.method == 'POST':
+        elif request.method == 'POST':
             try:
                 if 'date' in request.POST.keys():
                     str_date = request.POST['date']
@@ -91,8 +92,7 @@ def create_date_next_month(request, date_list=[]):
                     date_list = []
             except ValueError:
                 redirect(reverse_lazy('product:create_date_next_month'))
-        else:
-            date_list = []
+
         context = {
             'next_month': calendar[1],
             'next_month_title': calendar[3],
@@ -105,40 +105,39 @@ def create_date_next_month(request, date_list=[]):
 
         return render(request, 'product/add_date.html', context=context)
     else:
-        raise Http404
+        return redirect('order:home')
 
 
+@login_required
 def add_current_month(request):
-    if request.user.is_staff:
-        calendar = create_calendar()
-        half_carcasses = HalfCarcasses.objects.all()
-        by_product = ByProduct.objects.all()
-        if request.method == 'POST':
-            try:
-                dict_month = json.loads(request.POST['month'])
-                half_carcasses_int = request.POST['half_carcasses']
-                by_product_int = request.POST['by_product']
-                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                by_product_quantity = int(request.POST['by_product_quantity'])
-                date_list = parse_month(dict_month=dict_month)
-                create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
-                                     by_product_int=by_product_int, half_carcasses_quantity=half_carcasses_quantity,
-                                     by_product_quantity=by_product_quantity)
-            except ValueError:
-                redirect(reverse_lazy('product:add_current_month'))
+    calendar = create_calendar()
+    half_carcasses = HalfCarcasses.objects.all()
+    by_product = ByProduct.objects.all()
+    if request.method == 'POST':
+        try:
+            dict_month = json.loads(request.POST['month'])
+            half_carcasses_int = request.POST['half_carcasses']
+            by_product_int = request.POST['by_product']
+            half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
+            by_product_quantity = int(request.POST['by_product_quantity'])
+            date_list = parse_month(dict_month=dict_month)
+            create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
+                                 by_product_int=by_product_int, half_carcasses_quantity=half_carcasses_quantity,
+                                 by_product_quantity=by_product_quantity)
+        except ValueError:
+            redirect(reverse_lazy('product:add_current_month'))
 
-        context = {
-            'current_month': calendar[0],
-            'current_month_title': calendar[2],
-            'half_carcasses': half_carcasses,
-            'by_product': by_product,
-            'number_mount': calendar[4],
-        }
-        return render(request, 'product/add_month.html', context=context)
-    else:
-        raise Http404
+    context = {
+        'current_month': calendar[0],
+        'current_month_title': calendar[2],
+        'half_carcasses': half_carcasses,
+        'by_product': by_product,
+        'number_mount': calendar[4],
+    }
+    return render(request, 'product/add_month.html', context=context)
 
 
+@login_required
 def add_next_month(request):
     if request.user.is_staff:
         calendar = create_calendar()
@@ -167,10 +166,10 @@ def add_next_month(request):
         }
         return render(request, 'product/add_month.html', context=context)
     else:
-        raise Http404
+        return redirect('order:home')
 
 
-class DateList(generic.ListView):
+class DateList(LoginRequiredMixin, generic.ListView):
     model = Date
     template_name = 'product/date_list.html'
 
@@ -183,13 +182,7 @@ class DateList(generic.ListView):
         return context_data
 
 
-class CreateProduct(generic.CreateView):
-    model = HalfCarcasses
-    form_class = HalfCarcassesForm
-    template_name = 'product/halfcarses_form.html'
-    success_url = reverse_lazy('product:date_add')
-
-
+@login_required
 def next_month(request):
     date = Date.objects.all()
     calendar = create_calendar()
@@ -203,6 +196,7 @@ def next_month(request):
     return render(request, 'product/date_list.html', context)
 
 
+@login_required
 def current_month(request):
     date = Date.objects.all()
     calendar = create_calendar()
@@ -216,9 +210,10 @@ def current_month(request):
     return render(request, 'product/date_list.html', context, )
 
 
+@login_required
 def make_order(request, pk):
     if request.user.is_staff:
-        raise Http404
+        redirect('order:home')
     else:
         if request.method == 'POST':
             try:

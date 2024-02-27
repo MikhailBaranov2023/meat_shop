@@ -7,7 +7,7 @@
                     <form method="post">
                         {% csrf_token %}
                         <h3>Хотите удалить заказ на "{{ object.date.date }}" ?</h3>
-                        <button type="submit" class="btn btn-danger">Подтвердить</button>
+                        <button type="submit" class="btn btn-danger" id="delete">Подтвердить</button>
                         <a href="{% url 'order:order_list' %}" class="btn btn-warning"> Отменить</a>
                     </form>
                 </div>
@@ -15,3 +15,17 @@
         </div>
     </div>
 </div>
+ <div class="container nav">
+        <div class="info d-none" id="dNone">
+            <div class="col-lg-6 col-md-8 col-7 text-center">
+                <div class="">
+                    <h4 class="info-title card-title w-100">Заказ принят</h4>
+                    <h5 class="card-title">Мясная продукция на вас уже заказана,
+                        удалить возможно лишь за 24 часа до
+                        поставки.</h5>
+                    <h5 class="card-title">Просьба связать по номеру:</h5>
+                    <h4 class="card-title">+7-951-555-55-55</h4>
+                </div>
+            </div>
+        </div>
+    </div>

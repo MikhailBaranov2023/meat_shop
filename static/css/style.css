@@ -32,7 +32,13 @@ body {
 #id_password2,
 #id_first_name,
 #id_last_name,
-#id_city {
+#id_city,
+#id_companycard_set-0-type,
+#id_companycard_set-0-bank_account,
+#id_companycard_set-0-INN,
+#id_companycard_set-0-ogrn,
+#id_companycard_set-0-ogrn,
+#id_companycard_set-0-guid {
     margin: 0 0 20px 25px;
     border-radius: 10px;
     border: none;
@@ -49,7 +55,13 @@ body {
     margin: 5px 23px 10px 28px
 }
 
-#id_city {
+#id_city,
+#id_companycard_set-0-type,
+#id_companycard_set-0-bank_account,
+#id_companycard_set-0-INN,
+#id_companycard_set-0-ogrn,
+#id_companycard_set-0-ogrn,
+#id_companycard_set-0-guid {
     margin: 5px 23px 10px 28px
 }
 
