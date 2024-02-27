@@ -211,47 +211,84 @@ def current_month(request):
 
 
 @login_required
-def make_order(request, pk):
-    if request.user.is_staff:
-        redirect('order:home')
-    else:
-        if request.method == 'POST':
-            try:
-                if request.POST['by_product_quantity'] == '':
-                    by_product_quantity = 0
-                    date_id = int(request.POST['date'])
-                    half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                    description = request.POST['description']
-                    user = request.user
-                    create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                                 order_quantity_bp=by_product_quantity,
-                                 description=description, user=user)
-                    return redirect(reverse_lazy('order:home'))
-                else:
-                    date_id = int(request.POST['date'])
-                    half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                    by_product_quantity = int(request.POST['by_product_quantity'])
-                    description = request.POST['description']
-                    user = request.user
-                    create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                                 order_quantity_bp=by_product_quantity,
-                                 description=description, user=user)
-                    return redirect(reverse_lazy('order:home'))
-            except ValueError:
-                redirect(reverse_lazy('product:date_list'))
+def make_order_current_month(request, pk):
+    if request.method == 'POST':
+        try:
+            if request.POST['by_product_quantity'] == '':
+                by_product_quantity = 0
+                date_id = int(request.POST['date'])
+                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
+                description = request.POST['description']
+                user = request.user
+                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                             order_quantity_bp=by_product_quantity,
+                             description=description, user=user)
+                return redirect(reverse_lazy('order:home'))
+            else:
+                date_id = int(request.POST['date'])
+                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
+                by_product_quantity = int(request.POST['by_product_quantity'])
+                description = request.POST['description']
+                user = request.user
+                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                             order_quantity_bp=by_product_quantity,
+                             description=description, user=user)
+                return redirect(reverse_lazy('order:home'))
+        except ValueError:
+            redirect(reverse_lazy('product:date_list'))
 
-        date_item = get_object_or_404(Date, pk=pk)
-        date_all = Date.objects.all()
-        calendar = create_calendar()
-        context = {
-            'object': date_item,
-            'object_list': date_all,
-            'current_month': calendar[0],
-            'next_month': calendar[1],
-            'current_month_title': calendar[2],
-            'next_month_title': calendar[3],
-            'number_mount': calendar[4]
+    date_item = get_object_or_404(Date, pk=pk)
+    date_all = Date.objects.all()
+    calendar = create_calendar()
+    context = {
+        'object': date_item,
+        'object_list': date_all,
+        'current_month': calendar[0],
+        'current_month_title': calendar[2],
+        'number_mount': calendar[4]
 
-        }
-        return render(request, template_name='product/date_list.html',
-                      context=context)
+    }
+    return render(request, template_name='product/date_list.html',
+                  context=context)
+
+
+@login_required
+def make_order_next_month(request, pk):
+    if request.method == 'POST':
+        try:
+            if request.POST['by_product_quantity'] == '':
+                by_product_quantity = 0
+                date_id = int(request.POST['date'])
+                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
+                description = request.POST['description']
+                user = request.user
+                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                             order_quantity_bp=by_product_quantity,
+                             description=description, user=user)
+                return redirect(reverse_lazy('order:home'))
+            else:
+                date_id = int(request.POST['date'])
+                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
+                by_product_quantity = int(request.POST['by_product_quantity'])
+                description = request.POST['description']
+                user = request.user
+                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                             order_quantity_bp=by_product_quantity,
+                             description=description, user=user)
+                return redirect(reverse_lazy('order:home'))
+        except ValueError:
+            redirect(reverse_lazy('product:date_list'))
+
+    date_item = get_object_or_404(Date, pk=pk)
+    date_all = Date.objects.all()
+    calendar = create_calendar()
+    context = {
+        'object': date_item,
+        'object_list': date_all,
+        'next_month': calendar[1],
+        'next_month_title': calendar[3],
+        'number_mount': calendar[4] + 1
+
+    }
+    return render(request, template_name='product/date_list.html',
+                  context=context)

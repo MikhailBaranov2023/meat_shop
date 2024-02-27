@@ -9,6 +9,8 @@ from django.http import Http404
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from product.models import Announcement
+
 
 class OderListView(LoginRequiredMixin, ListView):
     model = Order
@@ -69,7 +71,11 @@ def cancel_order_func(request, pk):
 
 
 def main_page(request):
-    return render(request, template_name='order/index.html')
+    announcement = Announcement.objects.all().get().body
+    context = {
+        "announcement": announcement,
+    }
+    return render(request, template_name='order/index.html', context=context)
 
 
 def contact(request):

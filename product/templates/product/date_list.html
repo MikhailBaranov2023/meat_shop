@@ -35,7 +35,7 @@
                             {% for object in object_list %}
                                 {% if object.date.month == number_mount %}
                                     {% if object.date.day == day %}
-                                        <a href="{% url 'product:detect_date' object.pk %}">
+                                        <a href="{% url 'product:detect_date_current' object.pk %}">
                                             <span class="span calendar-span-order">{{ object.half_carcasses_quantity }}</span>
                                         </a>
                                     {% endif %}
@@ -56,7 +56,7 @@
                             {% for object in object_list %}
                                 {% if object.date.month == number_mount %}
                                     {% if object.date.day == day %}
-                                        <a href="{% url 'product:detect_date' object.pk %}">
+                                        <a href="{% url 'product:detect_date_next' object.pk %}">
                                             <span class="span calendar-span-order">{{ object.half_carcasses_quantity }}</span>
                                         </a>
                                     {% endif %}

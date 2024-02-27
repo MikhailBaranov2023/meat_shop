@@ -43,3 +43,14 @@ class Date(models.Model):
     class Meta:
         verbose_name = 'доступные даты для заказа'
         verbose_name_plural = 'доступные даты для заказа'
+
+
+class Announcement(models.Model):
+    body = models.TextField(max_length=500, verbose_name='Объявление', **NULLABLE)
+
+    def __str__(self):
+        return self.body
+
+    class Meta:
+        verbose_name = 'объявление'
+        verbose_name_plural = 'объявления'
