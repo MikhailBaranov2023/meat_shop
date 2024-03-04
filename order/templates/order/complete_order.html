@@ -1,0 +1,14 @@
+{% include 'order/includes/inc_order.html' %}
+<div class="container">
+    <div class="col-12 mb-5 nav">
+        <a class='btn hvr-shadow hvr-back-pulse' href="{% url 'order:order_list' %}">Мои заказы</a>
+    </div>
+    <div class="row text-center nav" id="blockNone">
+        <div class="col-6 info footer-info mb-2">
+            <div class="info">
+                <h2 class="mb-2">Ваш заказ принят</h2>
+            </div>
+        </div>
+        <a class="p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:home' %}"> На главную</a>
+    </div>
+</div>

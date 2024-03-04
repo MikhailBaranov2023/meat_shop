@@ -5,7 +5,7 @@ from .models import Date, ByProduct, HalfCarcasses
 from django.urls import reverse_lazy
 from product.services import create_calendar, parse_month, create_multiple_date
 import datetime
-from django.core.exceptions import ValidationError, PermissionDenied
+from django.core.exceptions import ValidationError
 import json
 from order.services import create_order
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -220,20 +220,24 @@ def make_order_current_month(request, pk):
                 half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
                 description = request.POST['description']
                 user = request.user
-                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                             order_quantity_bp=by_product_quantity,
-                             description=description, user=user)
-                return redirect(reverse_lazy('order:home'))
+                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                                order_quantity_bp=by_product_quantity,
+                                description=description, user=user) is True:
+                    return redirect(reverse_lazy('order:complete_order'))
+                else:
+                    return redirect(reverse_lazy('product:date_list'))
             else:
                 date_id = int(request.POST['date'])
                 half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
                 by_product_quantity = int(request.POST['by_product_quantity'])
                 description = request.POST['description']
                 user = request.user
-                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                             order_quantity_bp=by_product_quantity,
-                             description=description, user=user)
-                return redirect(reverse_lazy('order:home'))
+                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                                order_quantity_bp=by_product_quantity,
+                                description=description, user=user) is True:
+                    return redirect(reverse_lazy('order:complete_order'))
+                else:
+                    return redirect(reverse_lazy('product:date_list'))
         except ValueError:
             redirect(reverse_lazy('product:date_list'))
 
@@ -262,20 +266,26 @@ def make_order_next_month(request, pk):
                 half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
                 description = request.POST['description']
                 user = request.user
-                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                             order_quantity_bp=by_product_quantity,
-                             description=description, user=user)
-                return redirect(reverse_lazy('order:home'))
+
+                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                                order_quantity_bp=by_product_quantity,
+                                description=description, user=user) is True:
+                    return redirect(reverse_lazy('order:complete_order'))
+                else:
+                    return redirect(reverse_lazy('product:date_list'))
             else:
                 date_id = int(request.POST['date'])
                 half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
                 by_product_quantity = int(request.POST['by_product_quantity'])
                 description = request.POST['description']
                 user = request.user
-                create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                             order_quantity_bp=by_product_quantity,
-                             description=description, user=user)
-                return redirect(reverse_lazy('order:home'))
+
+                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                                order_quantity_bp=by_product_quantity,
+                                description=description, user=user) is True:
+                    return redirect(reverse_lazy('order:complete_order'))
+                else:
+                    return redirect(reverse_lazy('product:date_list'))
         except ValueError:
             redirect(reverse_lazy('product:date_list'))
 

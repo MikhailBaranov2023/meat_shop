@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 NULLABLE = {
     'null': True,
@@ -8,10 +7,15 @@ NULLABLE = {
 
 
 class HalfCarcasses(models.Model):
-    price = models.PositiveIntegerField(default=0, verbose_name='цена за кг', **NULLABLE)
+    price = models.PositiveIntegerField(default=0, verbose_name='цена', **NULLABLE)
+    kg = models.BooleanField(default=False, verbose_name='кг', **NULLABLE)
+    piece = models.BooleanField(default=False, verbose_name='штуки', **NULLABLE)
 
     def __str__(self):
-        return f'Полутуши '
+        if self.kg is True:
+            return f'Полутуши-{self.price}р/кг '
+        else:
+            return f'Полутуши-{self.price}р/шт'
 
     class Meta:
         verbose_name = 'полутуша'
@@ -20,10 +24,15 @@ class HalfCarcasses(models.Model):
 
 class ByProduct(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название продукта', **NULLABLE)
-    price = models.PositiveIntegerField(default=0, verbose_name='цена за кг', **NULLABLE)
+    price = models.PositiveIntegerField(default=0, verbose_name='цена', **NULLABLE)
+    kg = models.BooleanField(default=False, verbose_name='кг', **NULLABLE)
+    piece = models.BooleanField(default=False, verbose_name='штуки', **NULLABLE)
 
     def __str__(self):
-        return f'{(self.title).title()} '
+        if self.kg is True:
+            return f'{(self.title).title()}-{self.price}р/кг '
+        else:
+            return f'{(self.title).title()}-{self.price}р/шт'
 
     class Meta:
         verbose_name = 'субпродукты'

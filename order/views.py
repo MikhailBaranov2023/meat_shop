@@ -80,3 +80,8 @@ def main_page(request):
 
 def contact(request):
     return render(request, template_name='order/contacts.html')
+
+
+@login_required
+def complete_order(request):
+    return render(request, template_name='order/complete_order.html')

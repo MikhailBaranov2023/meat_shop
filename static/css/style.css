@@ -14,10 +14,6 @@ body {
     font-family: Stengazeta sans-serif;
 }
 
-.mb-2 {
-    margin-bottom: 20px;
-}
-
 .login {
     background: #6ba452;
     border: none;
@@ -279,8 +275,34 @@ a:active {
     text-align: center;
     font-weight: 500;
     padding: 25px 5px;
+    font-size: 15px;
 }
 
+.info-block {
+    position: relative;
+    font-size: 15px;
+    padding: 4px 0 2px 71px;
+    font-style: oblique 40deg;
+}
+
+.info-span {
+    width: 73px;
+    height: 45px;
+    background: #f0cf60;
+    text-align: center;
+    color: black;
+    display: inline-block;
+    border-radius: 30px;
+    padding-top: 11px;
+    position: absolute;
+    left: 0; top: 0;
+    font-style: normal;
+}
+
+.red {
+    font-weight: bold;
+    font-size: 16px;
+}
 .info-title {
     border-bottom: 2px solid black;
     font-weight: 700;
@@ -405,6 +427,10 @@ a:active {
     margin-left: 23px;
 }
 
+.mb-2 {
+    margin-bottom: 20px;
+}
+
 .mt-1 {
     margin-top: 10px;
 }
@@ -415,6 +441,18 @@ a:active {
 
 .pt-4 {
     padding-top: 40px;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.w-300 {
+    width: 300px;
 }
 
 .w {

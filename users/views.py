@@ -1,5 +1,3 @@
-from django.core.exceptions import PermissionDenied
-from django.shortcuts import redirect
 from django.views.generic import CreateView, UpdateView
 from users.models import User, CompanyCard
 from users.forms import UserRegisterForm, UserProfileForm, CompanyCardForm

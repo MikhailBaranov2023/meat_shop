@@ -11,17 +11,20 @@ def create_order(date_int: int, order_quantity_hc: int,
     date_obj = Date.objects.filter(pk=date_int).get().date
     time_delta = date_obj - date_now
     cancel_date = date_obj - datetime.timedelta(days=1)
-    if time_delta.days > 0:
+    if time_delta.days >= 0:
         if order_quantity_hc <= date_hc_quantity:
             if order_quantity_bp <= date_bp_quantity:
-                Order.objects.create(date_id=date_int, half_carcasses_quantity=order_quantity_hc,
-                                     by_product_quantity=order_quantity_bp, description=description, user=user,
-                                     cancel_date=cancel_date)
-                new_hc = date_hc_quantity - order_quantity_hc
-                new_bp = date_bp_quantity - order_quantity_bp
-                Date.objects.filter(pk=date_int).update(half_carcasses_quantity=new_hc)
-                Date.objects.filter(pk=date_int).update(by_product_quantity=new_bp)
-                return True
+                if Order.objects.filter(user=user, date_id=date_int).exists():
+                    return False
+                else:
+                    Order.objects.create(date_id=date_int, half_carcasses_quantity=order_quantity_hc,
+                                         by_product_quantity=order_quantity_bp, description=description, user=user,
+                                         cancel_date=cancel_date)
+                    new_hc = date_hc_quantity - order_quantity_hc
+                    new_bp = date_bp_quantity - order_quantity_bp
+                    Date.objects.filter(pk=date_int).update(half_carcasses_quantity=new_hc)
+                    Date.objects.filter(pk=date_int).update(by_product_quantity=new_bp)
+                    return True
             return False
         return False
     else:

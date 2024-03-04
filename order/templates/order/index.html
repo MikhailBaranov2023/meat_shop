@@ -29,13 +29,7 @@
                     <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:profile' %}">Профиль</a>
                     <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:contact' %}">Контакты</a>
                     <div class="info menu">
-                        <h4 class="mb-2">Предварительные заказы будут
-                            подтверждены, но в случае
-                            форс-мажора возможны изменения
-                            объема. Мы сообщим вам об этом.</h4>
-                        <h4>
-                            Субпродукты отдаем по возможности.
-                        </h4>
+                        <h4 class="mb-2">{{ announcement }}</h4>
                     </div>
                     <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:logout' %}">Выход</a>
                 </div>
@@ -48,8 +42,11 @@
                     <a class="menu p-2 btn btn-outline-primary hvr-shadow hvr-back-pulse"
                        href="{% url 'order:contact' %}">Контакты</a>
                     <div class="info">
+
                         <h4 class="mb-2">{{ announcement }}</h4>
+
                     </div>
+                    <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:login' %}">Вход</a>
                 </div>
             {% endif %}
         {% endif %}

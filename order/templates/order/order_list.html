@@ -22,7 +22,10 @@
                         <div class="card-body mb-4 box-shadow">
                             <div class="info-grid">
                                 <h5>{{ object.date.half_carcasses }}- {{ object.half_carcasses_quantity }}кг</h5>
-                                <h5>{{ object.date.by_product }}- {{ object.by_product_quantity }}кг </h5>
+                                {% if object.by_product_quantity == 0 %}
+                                {% else %}
+                                    <h5>{{ object.date.by_product }}- {{ object.by_product_quantity }}кг </h5>
+                                {% endif %}
                             </div>
                             <h5 class="card-title">Описание заказа: {{ object.description| truncatechars:50 }}</h5>
                             <h5 class="text-muted card-title">Заказчик
@@ -54,6 +57,7 @@
                     </div>
                 {% endif %}
             {% endfor %}
+            <a class="p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:home' %}"> На главную</a>
         </div>
     </div>
 

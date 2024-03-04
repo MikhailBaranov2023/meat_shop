@@ -1,6 +1,12 @@
 {% include 'order/includes/inc_order.html' %}
 
 <div class="container nav">
+    <div class="info-block btn">
+        <div class="info-span">
+            40
+        </div>
+        доступное количество продукта на выбранную дату
+    </div>
     <div class="calendar">
         <div class="month_and_year">
             <a class="button" href="{% url 'product:current_month' %}"><<</a>
@@ -52,6 +58,7 @@
                                 {#                                    <p></p>#}
                             {% else %}
                                 <div id="button" type="submit" class="calendar-data">{{ day }}</div>
+                                <span class="span calendar-span-order"></span>
                             {% endif %}
                             {% for object in object_list %}
                                 {% if object.date.month == number_mount %}
@@ -69,6 +76,9 @@
         </div>
     </div>
 </div>
+<a class="p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:home' %}">
+    Назад
+</a>
 <div class="data">
     {% if object %}
         <p class="data-order">{{ object.date.day }}</p>
