@@ -1,5 +1,5 @@
 import calendar
-from .models import Date
+from .models import Date, ByProduct
 import datetime
 
 
@@ -72,8 +72,19 @@ def parse_month(dict_month: dict):
     return date_list
 
 
-def create_multiple_date(date_list: list, half_carcasses_int, by_product_int, half_carcasses_quantity,
-                         by_product_quantity):
+def create_multiple_date(date_list: list, half_carcasses_int, half_carcasses_quantity, bp1, bp1q, bp2, bp2q, bp3, bp3q,
+                         bp4, bp4q, bp5, bp5q):
+    if ByProduct.objects.filter(pk=int(bp1)).exists():
+        bp1 = ByProduct.objects.filter(pk=int(bp1)).get().pk
+    if ByProduct.objects.filter(pk=int(bp2)).exists():
+        bp2 = ByProduct.objects.filter(pk=int(bp2)).get().pk
+    if ByProduct.objects.filter(pk=int(bp3)).exists():
+        bp3 = ByProduct.objects.filter(pk=int(bp3)).get().pk
+    if ByProduct.objects.filter(pk=int(bp4)).exists():
+        bp4 = ByProduct.objects.filter(pk=int(bp4)).get().pk
+    if ByProduct.objects.filter(pk=int(bp5)).exists():
+        bp5 = ByProduct.objects.filter(pk=int(bp5)).get().pk
+
     for d in date_list:
         if d < datetime.date.today():
             continue
@@ -81,6 +92,15 @@ def create_multiple_date(date_list: list, half_carcasses_int, by_product_int, ha
             if Date.objects.filter(date=d).exists():
                 continue
             else:
-                Date.objects.create(date=d, half_carcasses_id=half_carcasses_int, by_product_id=by_product_int,
-                                    half_carcasses_quantity=half_carcasses_quantity,
-                                    by_product_quantity=by_product_quantity)
+                date = Date.objects.create(date=d, half_carcasses_id=half_carcasses_int,
+                                           half_carcasses_quantity=half_carcasses_quantity)
+                if bp1q > 0:
+                    date.by_product.add(bp1, through_defaults={'quantity': bp1q})
+                if bp2q > 0:
+                    date.by_product.add(bp2, through_defaults={'quantity': bp2q})
+                if bp3q > 0:
+                    date.by_product.add(bp3, through_defaults={'quantity': bp3q})
+                if bp4q > 0:
+                    date.by_product.add(bp4, through_defaults={'quantity': bp4q})
+                if bp5q > 0:
+                    date.by_product.add(bp5, through_defaults={'quantity': bp5q})

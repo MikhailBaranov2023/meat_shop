@@ -1,12 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DeleteView
-from order.models import Order
+from django.views.generic import ListView
+from order.models import Order, ByProductOrders
 from django.urls import reverse_lazy
 from .services import cancel_order
 import datetime
-from django.http import Http404
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from product.models import Announcement
@@ -25,57 +23,42 @@ class OderListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
         now = datetime.date.today()
+        bp_orders = ByProductOrders.objects.all()
         context_data['now'] = now
-
+        context_data['bp_orders'] = bp_orders
         return context_data
-
-
-class OrderDeleteView(LoginRequiredMixin, DeleteView):
-    model = Order
-    success_url = reverse_lazy('order:home')
-
-    def get_object(self, queryset=None):
-        """ Проверка на то, что пользователь не может удалить чужой заказ """
-        self.object = super().get_object(queryset)
-        if self.object.user == self.request.user or self.request.user.is_staff:
-            today = datetime.date.today()
-            time_dlt = self.object.date.date - today
-            if time_dlt.days <= 1:
-                raise redirect(reverse_lazy('order:order_list'))
-            else:
-                return self.object
-        elif self.object.user != self.request.user:
-            raise Http404
-
-    def form_valid(self, form):
-        date_to_return = super().form_valid(form)
-        if self.request.method == "POST":
-            cancel_order(date=self.object.date, order_quantity_hc=self.object.half_carcasses_quantity,
-                         order_quantity_bp=self.object.by_product_quantity)
-
-        return date_to_return
 
 
 @login_required
 def cancel_order_func(request, pk):
     order_obj = Order.objects.filter(pk=pk).get()
     if request.method == 'POST':
-        Order.objects.filter(pk=pk).update(status=request.POST['cancel'])
-        cancel_order(date=order_obj.date, order_quantity_hc=order_obj.half_carcasses_quantity,
-                     order_quantity_bp=order_obj.by_product_quantity)
-        return redirect(reverse_lazy('order:order_list'))
+        if request.user == Order.objects.filter(pk=pk).get().user:
+            Order.objects.filter(pk=pk).update(status=request.POST['cancel'])
+            if cancel_order(date=order_obj.date, order_quantity_hc=order_obj.half_carcasses_quantity,
+                            order_obj=order_obj) is True:
+                return redirect(reverse_lazy('order:order_list'))
+            else:
+                return redirect(reverse_lazy('order:order_list'))
+        else:
+            return redirect(reverse_lazy('order:home'))
+    bp_orders = ByProductOrders.objects.filter(order_id=pk)
     context = {
-        'object': order_obj
+        'object': order_obj,
+        'bp_orders': bp_orders
     }
     return render(request, template_name='order/order_cancel.html', context=context)
 
 
 def main_page(request):
-    announcement = Announcement.objects.all().get().body
-    context = {
-        "announcement": announcement,
-    }
-    return render(request, template_name='order/index.html', context=context)
+    if Announcement.objects.count() > 0:
+        announcement = Announcement.objects.all().get().body
+        context = {
+            "announcement": announcement,
+        }
+        return render(request, template_name='order/index.html', context=context)
+    else:
+        return render(request, template_name='order/index.html')
 
 
 def contact(request):

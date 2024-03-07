@@ -94,11 +94,12 @@
                             <input class="span-order-admin" type="text" name='half_carcasses_quantity'
                                    placeholder="max {{ object.half_carcasses_quantity }}">
                         </div>
-                        <div class="p-2 btn item item-last">
-                            {{ object.by_product }}
-                            <input class="span-order-admin" type="text" name='by_product_quantity'
-                                   placeholder="max {{ object.by_product_quantity }}">
-                        </div>
+                        {% for bp in by_product_items %}
+                            <div class="p-2 btn item item-last">
+                                {{ bp.by_product }}
+                                <input class="span-order-admin" type="text" name='{{ bp.by_product.title }}' placeholder="max {{ bp.quantity }}" >
+                            </div>
+                        {% endfor %}
                         <div class="">
                             <input class="item info-text" type="text" name='description'
                                    placeholder="Заметки к заказу">

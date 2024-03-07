@@ -1,0 +1,2418 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-03-07T18:48:39.494Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Объявление",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-03-07T18:49:15.614Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Полутуши-240р/шт",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-03-07T18:49:27.080Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Ноги-50р/кг ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-03-07T18:49:55.756Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Ноги-70р/кг ",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-03-07T18:49:58.426Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Ноги-70р/кг ",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-03-07T18:50:12.508Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Легкие-90р/кг ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-03-07T18:51:21.447Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "Печень-160р/кг ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-03-07T18:52:23.628Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "Селезенка-160р/кг ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-03-07T18:53:31.396Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "5",
+      "object_repr": "Хвосты-275р/кг ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-03-07T18:53:35.440Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Легкие-90р/кг ",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-03-07T18:53:37.562Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "Печень-160р/кг ",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-03-07T18:53:39.055Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Ноги-70р/кг ",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-03-07T18:53:40.657Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "Селезенка-160р/кг ",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-03-07T18:53:42.631Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "5",
+      "object_repr": "Хвосты-275р/кг ",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.968Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "8",
+      "object_repr": "9167547944 - 2024-03-21  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.971Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "7",
+      "object_repr": "9167547944 - 2024-03-18  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.972Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "6",
+      "object_repr": "9167547944 - 2024-03-17  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.973Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "9167547944 - 2024-03-30  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.973Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "4",
+      "object_repr": "9167547944 - 2024-03-29  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.974Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "9167547944 - 2024-03-23  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.975Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "9167547944 - 2024-03-24  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2024-03-07T19:28:57.975Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "9167547944 - 2024-03-15  Полутуши-240р/шт - доступно(240кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2024-03-07T19:42:55.394Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "12",
+      "object_repr": "9167547944 - 2024-03-30  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2024-03-07T19:42:55.397Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "11",
+      "object_repr": "9167547944 - 2024-03-23  Полутуши-240р/шт - доступно(61кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2024-03-07T19:42:55.398Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "10",
+      "object_repr": "9167547944 - 2024-03-22  Полутуши-240р/шт - доступно(60кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2024-03-07T19:42:55.398Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "9",
+      "object_repr": "9167547944 - 2024-03-17  Полутуши-240р/шт - доступно(100кг)  )",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add Пользователь",
+      "content_type": 6,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change Пользователь",
+      "content_type": 6,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete Пользователь",
+      "content_type": 6,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view Пользователь",
+      "content_type": 6,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add карточка компании",
+      "content_type": 7,
+      "codename": "add_companycard"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change карточка компании",
+      "content_type": 7,
+      "codename": "change_companycard"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete карточка компании",
+      "content_type": 7,
+      "codename": "delete_companycard"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view карточка компании",
+      "content_type": 7,
+      "codename": "view_companycard"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add объявление",
+      "content_type": 8,
+      "codename": "add_announcement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change объявление",
+      "content_type": 8,
+      "codename": "change_announcement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete объявление",
+      "content_type": 8,
+      "codename": "delete_announcement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view объявление",
+      "content_type": 8,
+      "codename": "view_announcement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add субпродукты",
+      "content_type": 9,
+      "codename": "add_byproduct"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change субпродукты",
+      "content_type": 9,
+      "codename": "change_byproduct"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete субпродукты",
+      "content_type": 9,
+      "codename": "delete_byproduct"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view субпродукты",
+      "content_type": 9,
+      "codename": "view_byproduct"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add Количество субпродукта на дату",
+      "content_type": 10,
+      "codename": "add_byproductitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change Количество субпродукта на дату",
+      "content_type": 10,
+      "codename": "change_byproductitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete Количество субпродукта на дату",
+      "content_type": 10,
+      "codename": "delete_byproductitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view Количество субпродукта на дату",
+      "content_type": 10,
+      "codename": "view_byproductitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add полутуша",
+      "content_type": 11,
+      "codename": "add_halfcarcasses"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change полутуша",
+      "content_type": 11,
+      "codename": "change_halfcarcasses"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete полутуша",
+      "content_type": 11,
+      "codename": "delete_halfcarcasses"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view полутуша",
+      "content_type": 11,
+      "codename": "view_halfcarcasses"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add доступные даты для заказа",
+      "content_type": 12,
+      "codename": "add_date"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change доступные даты для заказа",
+      "content_type": 12,
+      "codename": "change_date"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete доступные даты для заказа",
+      "content_type": 12,
+      "codename": "delete_date"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view доступные даты для заказа",
+      "content_type": 12,
+      "codename": "view_date"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add Количество субпродуктов в заказе",
+      "content_type": 13,
+      "codename": "add_byproductorders"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change Количество субпродуктов в заказе",
+      "content_type": 13,
+      "codename": "change_byproductorders"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete Количество субпродуктов в заказе",
+      "content_type": 13,
+      "codename": "delete_byproductorders"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view Количество субпродуктов в заказе",
+      "content_type": 13,
+      "codename": "view_byproductorders"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add заказ",
+      "content_type": 14,
+      "codename": "add_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change заказ",
+      "content_type": 14,
+      "codename": "change_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete заказ",
+      "content_type": 14,
+      "codename": "delete_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view заказ",
+      "content_type": 14,
+      "codename": "view_order"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "users",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "users",
+      "model": "companycard"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "product",
+      "model": "announcement"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "product",
+      "model": "byproduct"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "product",
+      "model": "byproductitem"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "product",
+      "model": "halfcarcasses"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "product",
+      "model": "date"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "order",
+      "model": "byproductorders"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "order",
+      "model": "order"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "0hmy2wx0pbddw19hnqa2btwnyekpcs8w",
+    "fields": {
+      "session_data": ".eJxVjEEOgjAQRe_StWkoLQzj0r1naKadGYsaSCisjHdXEha6_e-9_zKRtrXErcoSRzZn48zpd0uUHzLtgO803Wab52ldxmR3xR602uvM8rwc7t9BoVq-dWbx2AN7T8IaBJ0DFG0xA7JT7nKDg5IDQPBCrWR1QwMhaM-QtDPvDwG0OIw:1riJdf:7avlVWfqXF1jN-JNsJg-B9aMyYhWVpDyR9IUzRJGgSM",
+      "expire_date": "2024-03-21T19:42:47.992Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$0zmCI5EXnayfcSBcgA4VlN$YyGlWZvY+bPVx1rmB2AuObOef1U18D6q/ybsEi9qV3E=",
+      "last_login": "2024-03-07T19:42:47.990Z",
+      "is_superuser": true,
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-03-07T18:47:40.251Z",
+      "phone": "9998502717",
+      "first_name": "Your first name",
+      "last_name": "Your last name",
+      "city": "Your city",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$E0pQeI1rE03fW0Oe80RbRH$pt4vnLpjEivovydSnxMfqckXdbGf7Z/h33X2UlGbSl8=",
+      "last_login": "2024-03-07T19:29:06.900Z",
+      "is_superuser": false,
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-03-07T18:55:14.507Z",
+      "phone": "9167547944",
+      "first_name": "Михаил",
+      "last_name": "Баранов",
+      "city": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "product.halfcarcasses",
+    "pk": 1,
+    "fields": {
+      "price": 240,
+      "kg": false,
+      "piece": true
+    }
+  },
+  {
+    "model": "product.byproduct",
+    "pk": 1,
+    "fields": {
+      "title": "Ноги",
+      "price": 70,
+      "kg": true,
+      "piece": false
+    }
+  },
+  {
+    "model": "product.byproduct",
+    "pk": 2,
+    "fields": {
+      "title": "Легкие",
+      "price": 90,
+      "kg": true,
+      "piece": false
+    }
+  },
+  {
+    "model": "product.byproduct",
+    "pk": 3,
+    "fields": {
+      "title": "Печень",
+      "price": 160,
+      "kg": true,
+      "piece": false
+    }
+  },
+  {
+    "model": "product.byproduct",
+    "pk": 4,
+    "fields": {
+      "title": "Селезенка",
+      "price": 160,
+      "kg": true,
+      "piece": false
+    }
+  },
+  {
+    "model": "product.byproduct",
+    "pk": 5,
+    "fields": {
+      "title": "хвосты",
+      "price": 275,
+      "kg": true,
+      "piece": false
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 1,
+    "fields": {
+      "date": "2024-03-07",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 2,
+    "fields": {
+      "date": "2024-03-08",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 3,
+    "fields": {
+      "date": "2024-03-09",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 4,
+    "fields": {
+      "date": "2024-03-10",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 5,
+    "fields": {
+      "date": "2024-03-11",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 6,
+    "fields": {
+      "date": "2024-03-12",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 7,
+    "fields": {
+      "date": "2024-03-13",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 8,
+    "fields": {
+      "date": "2024-03-14",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 9,
+    "fields": {
+      "date": "2024-03-15",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 240
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 10,
+    "fields": {
+      "date": "2024-03-16",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 11,
+    "fields": {
+      "date": "2024-03-17",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 100
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 12,
+    "fields": {
+      "date": "2024-03-18",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 13,
+    "fields": {
+      "date": "2024-03-19",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 14,
+    "fields": {
+      "date": "2024-03-20",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 15,
+    "fields": {
+      "date": "2024-03-21",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 16,
+    "fields": {
+      "date": "2024-03-22",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 17,
+    "fields": {
+      "date": "2024-03-23",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 61
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 18,
+    "fields": {
+      "date": "2024-03-24",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 19,
+    "fields": {
+      "date": "2024-03-25",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 20,
+    "fields": {
+      "date": "2024-03-26",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 21,
+    "fields": {
+      "date": "2024-03-27",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 22,
+    "fields": {
+      "date": "2024-03-28",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 23,
+    "fields": {
+      "date": "2024-03-29",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 24,
+    "fields": {
+      "date": "2024-03-30",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.date",
+    "pk": 25,
+    "fields": {
+      "date": "2024-03-31",
+      "half_carcasses": 1,
+      "half_carcasses_quantity": 60
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 1,
+    "fields": {
+      "by_product": 2,
+      "date": 1,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 2,
+    "fields": {
+      "by_product": 3,
+      "date": 1,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 3,
+    "fields": {
+      "by_product": 1,
+      "date": 1,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 4,
+    "fields": {
+      "by_product": 4,
+      "date": 1,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 5,
+    "fields": {
+      "by_product": 5,
+      "date": 1,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 6,
+    "fields": {
+      "by_product": 2,
+      "date": 2,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 7,
+    "fields": {
+      "by_product": 3,
+      "date": 2,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 8,
+    "fields": {
+      "by_product": 1,
+      "date": 2,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 9,
+    "fields": {
+      "by_product": 4,
+      "date": 2,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 10,
+    "fields": {
+      "by_product": 5,
+      "date": 2,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 11,
+    "fields": {
+      "by_product": 2,
+      "date": 3,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 12,
+    "fields": {
+      "by_product": 3,
+      "date": 3,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 13,
+    "fields": {
+      "by_product": 1,
+      "date": 3,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 14,
+    "fields": {
+      "by_product": 4,
+      "date": 3,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 15,
+    "fields": {
+      "by_product": 5,
+      "date": 3,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 16,
+    "fields": {
+      "by_product": 2,
+      "date": 4,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 17,
+    "fields": {
+      "by_product": 3,
+      "date": 4,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 18,
+    "fields": {
+      "by_product": 1,
+      "date": 4,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 19,
+    "fields": {
+      "by_product": 4,
+      "date": 4,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 20,
+    "fields": {
+      "by_product": 5,
+      "date": 4,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 21,
+    "fields": {
+      "by_product": 2,
+      "date": 5,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 22,
+    "fields": {
+      "by_product": 3,
+      "date": 5,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 23,
+    "fields": {
+      "by_product": 1,
+      "date": 5,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 24,
+    "fields": {
+      "by_product": 4,
+      "date": 5,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 25,
+    "fields": {
+      "by_product": 5,
+      "date": 5,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 26,
+    "fields": {
+      "by_product": 2,
+      "date": 6,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 27,
+    "fields": {
+      "by_product": 3,
+      "date": 6,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 28,
+    "fields": {
+      "by_product": 1,
+      "date": 6,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 29,
+    "fields": {
+      "by_product": 4,
+      "date": 6,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 30,
+    "fields": {
+      "by_product": 5,
+      "date": 6,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 31,
+    "fields": {
+      "by_product": 2,
+      "date": 7,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 32,
+    "fields": {
+      "by_product": 3,
+      "date": 7,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 33,
+    "fields": {
+      "by_product": 1,
+      "date": 7,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 34,
+    "fields": {
+      "by_product": 4,
+      "date": 7,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 35,
+    "fields": {
+      "by_product": 5,
+      "date": 7,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 36,
+    "fields": {
+      "by_product": 2,
+      "date": 8,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 37,
+    "fields": {
+      "by_product": 3,
+      "date": 8,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 38,
+    "fields": {
+      "by_product": 1,
+      "date": 8,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 39,
+    "fields": {
+      "by_product": 4,
+      "date": 8,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 40,
+    "fields": {
+      "by_product": 5,
+      "date": 8,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 41,
+    "fields": {
+      "by_product": 2,
+      "date": 9,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 42,
+    "fields": {
+      "by_product": 3,
+      "date": 9,
+      "quantity": 5
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 43,
+    "fields": {
+      "by_product": 1,
+      "date": 9,
+      "quantity": 25
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 44,
+    "fields": {
+      "by_product": 4,
+      "date": 9,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 45,
+    "fields": {
+      "by_product": 5,
+      "date": 9,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 46,
+    "fields": {
+      "by_product": 2,
+      "date": 10,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 47,
+    "fields": {
+      "by_product": 3,
+      "date": 10,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 48,
+    "fields": {
+      "by_product": 1,
+      "date": 10,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 49,
+    "fields": {
+      "by_product": 4,
+      "date": 10,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 50,
+    "fields": {
+      "by_product": 5,
+      "date": 10,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 51,
+    "fields": {
+      "by_product": 2,
+      "date": 11,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 52,
+    "fields": {
+      "by_product": 3,
+      "date": 11,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 53,
+    "fields": {
+      "by_product": 1,
+      "date": 11,
+      "quantity": 30
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 54,
+    "fields": {
+      "by_product": 4,
+      "date": 11,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 55,
+    "fields": {
+      "by_product": 5,
+      "date": 11,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 56,
+    "fields": {
+      "by_product": 2,
+      "date": 12,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 57,
+    "fields": {
+      "by_product": 3,
+      "date": 12,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 58,
+    "fields": {
+      "by_product": 1,
+      "date": 12,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 59,
+    "fields": {
+      "by_product": 4,
+      "date": 12,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 60,
+    "fields": {
+      "by_product": 5,
+      "date": 12,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 61,
+    "fields": {
+      "by_product": 2,
+      "date": 13,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 62,
+    "fields": {
+      "by_product": 3,
+      "date": 13,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 63,
+    "fields": {
+      "by_product": 1,
+      "date": 13,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 64,
+    "fields": {
+      "by_product": 4,
+      "date": 13,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 65,
+    "fields": {
+      "by_product": 5,
+      "date": 13,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 66,
+    "fields": {
+      "by_product": 2,
+      "date": 14,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 67,
+    "fields": {
+      "by_product": 3,
+      "date": 14,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 68,
+    "fields": {
+      "by_product": 1,
+      "date": 14,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 69,
+    "fields": {
+      "by_product": 4,
+      "date": 14,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 70,
+    "fields": {
+      "by_product": 5,
+      "date": 14,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 71,
+    "fields": {
+      "by_product": 2,
+      "date": 15,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 72,
+    "fields": {
+      "by_product": 3,
+      "date": 15,
+      "quantity": 5
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 73,
+    "fields": {
+      "by_product": 1,
+      "date": 15,
+      "quantity": 25
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 74,
+    "fields": {
+      "by_product": 4,
+      "date": 15,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 75,
+    "fields": {
+      "by_product": 5,
+      "date": 15,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 76,
+    "fields": {
+      "by_product": 2,
+      "date": 16,
+      "quantity": 19
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 77,
+    "fields": {
+      "by_product": 3,
+      "date": 16,
+      "quantity": 13
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 78,
+    "fields": {
+      "by_product": 1,
+      "date": 16,
+      "quantity": 32
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 79,
+    "fields": {
+      "by_product": 4,
+      "date": 16,
+      "quantity": 16
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 80,
+    "fields": {
+      "by_product": 5,
+      "date": 16,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 81,
+    "fields": {
+      "by_product": 2,
+      "date": 17,
+      "quantity": 18
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 82,
+    "fields": {
+      "by_product": 3,
+      "date": 17,
+      "quantity": 12
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 83,
+    "fields": {
+      "by_product": 1,
+      "date": 17,
+      "quantity": 31
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 84,
+    "fields": {
+      "by_product": 4,
+      "date": 17,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 85,
+    "fields": {
+      "by_product": 5,
+      "date": 17,
+      "quantity": 14
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 86,
+    "fields": {
+      "by_product": 2,
+      "date": 18,
+      "quantity": 19
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 87,
+    "fields": {
+      "by_product": 3,
+      "date": 18,
+      "quantity": 14
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 88,
+    "fields": {
+      "by_product": 1,
+      "date": 18,
+      "quantity": 34
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 89,
+    "fields": {
+      "by_product": 4,
+      "date": 18,
+      "quantity": 19
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 90,
+    "fields": {
+      "by_product": 5,
+      "date": 18,
+      "quantity": 19
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 91,
+    "fields": {
+      "by_product": 2,
+      "date": 19,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 92,
+    "fields": {
+      "by_product": 3,
+      "date": 19,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 93,
+    "fields": {
+      "by_product": 1,
+      "date": 19,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 94,
+    "fields": {
+      "by_product": 4,
+      "date": 19,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 95,
+    "fields": {
+      "by_product": 5,
+      "date": 19,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 96,
+    "fields": {
+      "by_product": 2,
+      "date": 20,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 97,
+    "fields": {
+      "by_product": 3,
+      "date": 20,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 98,
+    "fields": {
+      "by_product": 1,
+      "date": 20,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 99,
+    "fields": {
+      "by_product": 4,
+      "date": 20,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 100,
+    "fields": {
+      "by_product": 5,
+      "date": 20,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 101,
+    "fields": {
+      "by_product": 2,
+      "date": 21,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 102,
+    "fields": {
+      "by_product": 3,
+      "date": 21,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 103,
+    "fields": {
+      "by_product": 1,
+      "date": 21,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 104,
+    "fields": {
+      "by_product": 4,
+      "date": 21,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 105,
+    "fields": {
+      "by_product": 5,
+      "date": 21,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 106,
+    "fields": {
+      "by_product": 2,
+      "date": 22,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 107,
+    "fields": {
+      "by_product": 3,
+      "date": 22,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 108,
+    "fields": {
+      "by_product": 1,
+      "date": 22,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 109,
+    "fields": {
+      "by_product": 4,
+      "date": 22,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 110,
+    "fields": {
+      "by_product": 5,
+      "date": 22,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 111,
+    "fields": {
+      "by_product": 2,
+      "date": 23,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 112,
+    "fields": {
+      "by_product": 3,
+      "date": 23,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 113,
+    "fields": {
+      "by_product": 1,
+      "date": 23,
+      "quantity": 60
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 114,
+    "fields": {
+      "by_product": 4,
+      "date": 23,
+      "quantity": 30
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 115,
+    "fields": {
+      "by_product": 5,
+      "date": 23,
+      "quantity": 40
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 116,
+    "fields": {
+      "by_product": 2,
+      "date": 24,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 117,
+    "fields": {
+      "by_product": 3,
+      "date": 24,
+      "quantity": 10
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 118,
+    "fields": {
+      "by_product": 1,
+      "date": 24,
+      "quantity": 30
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 119,
+    "fields": {
+      "by_product": 4,
+      "date": 24,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 120,
+    "fields": {
+      "by_product": 5,
+      "date": 24,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 121,
+    "fields": {
+      "by_product": 2,
+      "date": 25,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 122,
+    "fields": {
+      "by_product": 3,
+      "date": 25,
+      "quantity": 15
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 123,
+    "fields": {
+      "by_product": 1,
+      "date": 25,
+      "quantity": 35
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 124,
+    "fields": {
+      "by_product": 4,
+      "date": 25,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.byproductitem",
+    "pk": 125,
+    "fields": {
+      "by_product": 5,
+      "date": 25,
+      "quantity": 20
+    }
+  },
+  {
+    "model": "product.announcement",
+    "pk": 1,
+    "fields": {
+      "body": "Объявление"
+    }
+  }
+]

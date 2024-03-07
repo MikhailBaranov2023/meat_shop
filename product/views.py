@@ -1,11 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from .models import Date, ByProduct, HalfCarcasses
+from .models import Date, ByProduct, HalfCarcasses, ByProductItem
 from django.urls import reverse_lazy
 from product.services import create_calendar, parse_month, create_multiple_date
 import datetime
-from django.core.exceptions import ValidationError
 import json
 from order.services import create_order
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -13,14 +12,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 @login_required
 def create_date_current_month(request, date_list=[]):
+    """Выбираем даты для добавления в текущем месяце"""
+    calendar = create_calendar()
+    half_carcasses = HalfCarcasses.objects.all()
+    by_product = ByProduct.objects.all()
     if request.user.is_staff:
-        """Выбираем даты для добавления в текущем месяце"""
-        calendar = create_calendar()
-        half_carcasses = HalfCarcasses.objects.all()
-        by_product = ByProduct.objects.all()
         if request.method == 'GET':
             date_list = []
-        elif request.method == 'POST':
+        if request.method == 'POST':
             try:
                 if 'date' in request.POST.keys():
                     str_date = request.POST['date']
@@ -33,43 +32,67 @@ def create_date_current_month(request, date_list=[]):
                 elif 'confirm' in request.POST.keys():
                     date_list = date_list
                     half_carcasses_int = request.POST['half_carcasses']
-                    by_product_int = request.POST['by_product']
                     half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                    ValidationError('Введите число')
-                    by_product_quantity = int(request.POST['by_product_quantity'])
+                    by_product1 = request.POST['by_product1']
+                    if request.POST['by_product1_quantity'] == '':
+                        by_product1_quantity = 0
+                    else:
+                        by_product1_quantity = int(request.POST['by_product1_quantity'])
+                    by_product2 = request.POST['by_product2']
+                    if request.POST['by_product2_quantity'] == '':
+                        by_product2_quantity = 0
+                    else:
+                        by_product2_quantity = int(request.POST['by_product2_quantity'])
+                    by_product3 = request.POST['by_product3']
+                    if request.POST['by_product3_quantity'] == '':
+                        by_product3_quantity = 0
+                    else:
+                        by_product3_quantity = int(request.POST['by_product3_quantity'])
+                    by_product4 = request.POST['by_product4']
+                    if request.POST['by_product4_quantity'] == '':
+                        by_product4_quantity = 0
+                    else:
+                        by_product4_quantity = int(request.POST['by_product4_quantity'])
+                    by_product5 = request.POST['by_product5']
+                    if request.POST['by_product5_quantity'] == '':
+                        by_product5_quantity = 0
+                    else:
+                        by_product5_quantity = int(request.POST['by_product5_quantity'])
                     create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
-                                         by_product_int=by_product_int, half_carcasses_quantity=half_carcasses_quantity,
-                                         by_product_quantity=by_product_quantity)
+                                         half_carcasses_quantity=half_carcasses_quantity, bp1=by_product1,
+                                         bp1q=by_product1_quantity, bp2=by_product2, bp2q=by_product2_quantity,
+                                         bp3=by_product3, bp3q=by_product3_quantity, bp4=by_product4,
+                                         bp4q=by_product4_quantity, bp5=by_product5, bp5q=by_product5_quantity)
+
                     date_list = []
             except ValueError:
                 redirect(reverse_lazy('product:create_date_current_month'))
-
-        context = {
-            'current_month': calendar[0],
-            'current_month_title': calendar[2],
-            'number_mount': calendar[4],
-            'current_month_title_two': calendar[5],
-            'date_list': date_list,
-            'half_carcasses': half_carcasses,
-            'by_product': by_product,
-        }
-
-        return render(request, 'product/add_date.html', context=context)
-
     else:
         return redirect('order:home')
+
+    context = {
+        'current_month': calendar[0],
+        'current_month_title': calendar[2],
+        'number_mount': calendar[4],
+        'current_month_title_two': calendar[5],
+        'date_list': date_list,
+        'half_carcasses': half_carcasses,
+        'by_product': by_product,
+    }
+
+    return render(request, 'product/add_date.html', context=context)
 
 
 @login_required
 def create_date_next_month(request, date_list=[]):
     """Выбираем даты для добавления в слудеюзщем месяце месяце"""
+    calendar = create_calendar()
+    half_carcasses = HalfCarcasses.objects.all()
+    by_product = ByProduct.objects.all()
     if request.user.is_staff:
-        calendar = create_calendar()
-        half_carcasses = HalfCarcasses.objects.all()
-        by_product = ByProduct.objects.all()
         if request.method == 'GET':
             date_list = []
-        elif request.method == 'POST':
+        if request.method == 'POST':
             try:
                 if 'date' in request.POST.keys():
                     str_date = request.POST['date']
@@ -82,30 +105,55 @@ def create_date_next_month(request, date_list=[]):
                 elif 'confirm' in request.POST.keys():
                     date_list = date_list
                     half_carcasses_int = request.POST['half_carcasses']
-                    by_product_int = request.POST['by_product']
                     half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                    ValidationError('Введите число')
-                    by_product_quantity = int(request.POST['by_product_quantity'])
+                    by_product1 = request.POST['by_product1']
+                    if request.POST['by_product1_quantity'] == '':
+                        by_product1_quantity = 0
+                    else:
+                        by_product1_quantity = int(request.POST['by_product1_quantity'])
+                    by_product2 = request.POST['by_product2']
+                    if request.POST['by_product2_quantity'] == '':
+                        by_product2_quantity = 0
+                    else:
+                        by_product2_quantity = int(request.POST['by_product2_quantity'])
+                    by_product3 = request.POST['by_product3']
+                    if request.POST['by_product3_quantity'] == '':
+                        by_product3_quantity = 0
+                    else:
+                        by_product3_quantity = int(request.POST['by_product3_quantity'])
+                    by_product4 = request.POST['by_product4']
+                    if request.POST['by_product4_quantity'] == '':
+                        by_product4_quantity = 0
+                    else:
+                        by_product4_quantity = int(request.POST['by_product4_quantity'])
+                    by_product5 = request.POST['by_product5']
+                    if request.POST['by_product5_quantity'] == '':
+                        by_product5_quantity = 0
+                    else:
+                        by_product5_quantity = int(request.POST['by_product5_quantity'])
                     create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
-                                         by_product_int=by_product_int, half_carcasses_quantity=half_carcasses_quantity,
-                                         by_product_quantity=by_product_quantity)
+                                         half_carcasses_quantity=half_carcasses_quantity, bp1=by_product1,
+                                         bp1q=by_product1_quantity, bp2=by_product2, bp2q=by_product2_quantity,
+                                         bp3=by_product3, bp3q=by_product3_quantity, bp4=by_product4,
+                                         bp4q=by_product4_quantity, bp5=by_product5, bp5q=by_product5_quantity)
+
                     date_list = []
             except ValueError:
                 redirect(reverse_lazy('product:create_date_next_month'))
-
-        context = {
-            'next_month': calendar[1],
-            'next_month_title': calendar[3],
-            'number_mount': calendar[4] + 1,
-            'next_month_title_two': calendar[6],
-            'date_list': date_list,
-            'half_carcasses': half_carcasses,
-            'by_product': by_product,
-        }
-
-        return render(request, 'product/add_date.html', context=context)
     else:
         return redirect('order:home')
+
+    context = {
+        'next_month': calendar[1],
+        'next_month_title': calendar[3],
+        'number_mount': calendar[4] + 1,
+        'next_month_title_two': calendar[6],
+        'date_list': date_list,
+        'half_carcasses': half_carcasses,
+        'by_product': by_product,
+    }
+
+    return render(request, 'product/add_date.html', context=context)
 
 
 @login_required
@@ -117,13 +165,39 @@ def add_current_month(request):
         try:
             dict_month = json.loads(request.POST['month'])
             half_carcasses_int = request.POST['half_carcasses']
-            by_product_int = request.POST['by_product']
             half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-            by_product_quantity = int(request.POST['by_product_quantity'])
             date_list = parse_month(dict_month=dict_month)
+            by_product1 = request.POST['by_product1']
+            if request.POST['by_product1_quantity'] == '':
+                by_product1_quantity = 0
+            else:
+                by_product1_quantity = int(request.POST['by_product1_quantity'])
+            by_product2 = request.POST['by_product2']
+            if request.POST['by_product2_quantity'] == '':
+                by_product2_quantity = 0
+            else:
+                by_product2_quantity = int(request.POST['by_product2_quantity'])
+            by_product3 = request.POST['by_product3']
+            if request.POST['by_product3_quantity'] == '':
+                by_product3_quantity = 0
+            else:
+                by_product3_quantity = int(request.POST['by_product3_quantity'])
+            by_product4 = request.POST['by_product4']
+            if request.POST['by_product4_quantity'] == '':
+                by_product4_quantity = 0
+            else:
+                by_product4_quantity = int(request.POST['by_product4_quantity'])
+            by_product5 = request.POST['by_product5']
+            if request.POST['by_product5_quantity'] == '':
+                by_product5_quantity = 0
+            else:
+                by_product5_quantity = int(request.POST['by_product5_quantity'])
             create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
-                                 by_product_int=by_product_int, half_carcasses_quantity=half_carcasses_quantity,
-                                 by_product_quantity=by_product_quantity)
+                                 half_carcasses_quantity=half_carcasses_quantity, bp1=by_product1,
+                                 bp1q=by_product1_quantity, bp2=by_product2, bp2q=by_product2_quantity, bp3=by_product3,
+                                 bp3q=by_product3_quantity, bp4=by_product4, bp4q=by_product4_quantity, bp5=by_product5,
+                                 bp5q=by_product5_quantity)
+            return redirect(reverse_lazy('order:home'))
         except ValueError:
             redirect(reverse_lazy('product:add_current_month'))
 
@@ -147,13 +221,41 @@ def add_next_month(request):
             try:
                 dict_month = json.loads(request.POST['month'])
                 half_carcasses_int = request.POST['half_carcasses']
-                by_product_int = request.POST['by_product']
                 half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                by_product_quantity = int(request.POST['by_product_quantity'])
+                by_product1 = request.POST['by_product1']
                 date_list = parse_month(dict_month=dict_month)
+                if request.POST['by_product1_quantity'] == '':
+                    by_product1_quantity = 0
+                else:
+                    by_product1_quantity = int(request.POST['by_product1_quantity'])
+                by_product2 = request.POST['by_product2']
+                if request.POST['by_product2_quantity'] == '':
+                    by_product2_quantity = 0
+                else:
+                    by_product2_quantity = int(request.POST['by_product2_quantity'])
+                by_product3 = request.POST['by_product3']
+                if request.POST['by_product3_quantity'] == '':
+                    by_product3_quantity = 0
+                else:
+                    by_product3_quantity = int(request.POST['by_product3_quantity'])
+                by_product4 = request.POST['by_product4']
+                if request.POST['by_product4_quantity'] == '':
+                    by_product4_quantity = 0
+                else:
+                    by_product4_quantity = int(request.POST['by_product4_quantity'])
+                by_product5 = request.POST['by_product5']
+                if request.POST['by_product5_quantity'] == '':
+                    by_product5_quantity = 0
+                else:
+                    by_product5_quantity = int(request.POST['by_product5_quantity'])
                 create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
-                                     by_product_int=by_product_int, half_carcasses_quantity=half_carcasses_quantity,
-                                     by_product_quantity=by_product_quantity)
+                                     half_carcasses_quantity=half_carcasses_quantity, bp1=by_product1,
+                                     bp1q=by_product1_quantity, bp2=by_product2, bp2q=by_product2_quantity,
+                                     bp3=by_product3,
+                                     bp3q=by_product3_quantity, bp4=by_product4, bp4q=by_product4_quantity,
+                                     bp5=by_product5,
+                                     bp5q=by_product5_quantity)
+                return redirect(reverse_lazy('order:home'))
             except ValueError:
                 redirect(reverse_lazy('product:add_next_month'))
 
@@ -213,44 +315,46 @@ def current_month(request):
 @login_required
 def make_order_current_month(request, pk):
     if request.method == 'POST':
-        try:
-            if request.POST['by_product_quantity'] == '':
-                by_product_quantity = 0
-                date_id = int(request.POST['date'])
-                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                description = request.POST['description']
-                user = request.user
-                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                                order_quantity_bp=by_product_quantity,
-                                description=description, user=user) is True:
-                    return redirect(reverse_lazy('order:complete_order'))
-                else:
-                    return redirect(reverse_lazy('product:date_list'))
+        all_keys = request.POST.keys()
+        static_keys = ['csrfmiddlewaretoken', 'half_carcasses_quantity', 'description', 'date']
+        bp_keys = []
+        bp_value = []
+        for key in all_keys:
+            if key in static_keys:
+                continue
             else:
-                date_id = int(request.POST['date'])
-                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                by_product_quantity = int(request.POST['by_product_quantity'])
-                description = request.POST['description']
-                user = request.user
-                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                                order_quantity_bp=by_product_quantity,
-                                description=description, user=user) is True:
-                    return redirect(reverse_lazy('order:complete_order'))
+                bp_keys.append(key)
+        for quant in request.POST.keys():
+            for k in bp_keys:
+                if quant == k:
+                    bp_value.append(request.POST[quant])
                 else:
-                    return redirect(reverse_lazy('product:date_list'))
+                    continue
+        bp_dict = dict(zip(bp_keys, bp_value))
+        try:
+            date_id = int(request.POST['date'])
+            half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
+            description = request.POST['description']
+            user = request.user
+            if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                            description=description, user=user, bp_dict=bp_dict) is True:
+                return redirect(reverse_lazy('order:complete_order'))
+            else:
+                return redirect(reverse_lazy('product:date_list'))
         except ValueError:
             redirect(reverse_lazy('product:date_list'))
 
     date_item = get_object_or_404(Date, pk=pk)
     date_all = Date.objects.all()
     calendar = create_calendar()
+    by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
     context = {
         'object': date_item,
         'object_list': date_all,
         'current_month': calendar[0],
         'current_month_title': calendar[2],
-        'number_mount': calendar[4]
-
+        'number_mount': calendar[4],
+        'by_product_items': by_product_items,
     }
     return render(request, template_name='product/date_list.html',
                   context=context)
@@ -259,45 +363,46 @@ def make_order_current_month(request, pk):
 @login_required
 def make_order_next_month(request, pk):
     if request.method == 'POST':
-        try:
-            if request.POST['by_product_quantity'] == '':
-                by_product_quantity = 0
-                date_id = int(request.POST['date'])
-                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                description = request.POST['description']
-                user = request.user
-
-                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                                order_quantity_bp=by_product_quantity,
-                                description=description, user=user) is True:
-                    return redirect(reverse_lazy('order:complete_order'))
-                else:
-                    return redirect(reverse_lazy('product:date_list'))
+        all_keys = request.POST.keys()
+        static_keys = ['csrfmiddlewaretoken', 'half_carcasses_quantity', 'description', 'date']
+        bp_keys = []
+        bp_value = []
+        for key in all_keys:
+            if key in static_keys:
+                continue
             else:
-                date_id = int(request.POST['date'])
-                half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
-                by_product_quantity = int(request.POST['by_product_quantity'])
-                description = request.POST['description']
-                user = request.user
-
-                if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
-                                order_quantity_bp=by_product_quantity,
-                                description=description, user=user) is True:
-                    return redirect(reverse_lazy('order:complete_order'))
+                bp_keys.append(key)
+        for quant in request.POST.keys():
+            for k in bp_keys:
+                if quant == k:
+                    bp_value.append(request.POST[quant])
                 else:
-                    return redirect(reverse_lazy('product:date_list'))
+                    continue
+        bp_dict = dict(zip(bp_keys, bp_value))
+        try:
+            date_id = int(request.POST['date'])
+            half_carcasses_quantity = int(request.POST['half_carcasses_quantity'])
+            description = request.POST['description']
+            user = request.user
+            if create_order(date_int=date_id, order_quantity_hc=half_carcasses_quantity,
+                            description=description, user=user, bp_dict=bp_dict) is True:
+                return redirect(reverse_lazy('order:complete_order'))
+            else:
+                return redirect(reverse_lazy('product:date_list'))
         except ValueError:
             redirect(reverse_lazy('product:date_list'))
 
     date_item = get_object_or_404(Date, pk=pk)
     date_all = Date.objects.all()
     calendar = create_calendar()
+    by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
     context = {
         'object': date_item,
         'object_list': date_all,
         'next_month': calendar[1],
         'next_month_title': calendar[3],
-        'number_mount': calendar[4] + 1
+        'number_mount': calendar[4] + 1,
+        'by_product_items': by_product_items,
 
     }
     return render(request, template_name='product/date_list.html',

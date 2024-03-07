@@ -22,9 +22,13 @@
                         <div class="card-body mb-4 box-shadow">
                             <div class="info-grid">
                                 <h5>{{ object.date.half_carcasses }}- {{ object.half_carcasses_quantity }}кг</h5>
-                                {% if object.by_product_quantity == 0 %}
+                                {% if bp_orders.count == 0 %}
                                 {% else %}
-                                    <h5>{{ object.date.by_product }}- {{ object.by_product_quantity }}кг </h5>
+                                    {% for bp in bp_orders %}
+                                        {% if bp.order.date == object.date %}
+                                            <h5>{{ bp.by_product.title}} - {{ bp.quantity }} </h5>
+                                        {% endif %}
+                                    {% endfor %}
                                 {% endif %}
                             </div>
                             <h5 class="card-title">Описание заказа: {{ object.description| truncatechars:50 }}</h5>

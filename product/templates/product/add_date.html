@@ -112,7 +112,6 @@
         <nav class="ms-5">
             <div class="nav nav-admin">
                 <form method="post">{% csrf_token %}
-
                     <div class="btn item btn-item">
                         <select class="products" name="half_carcasses" id="container">
                             {% for obj in half_carcasses %}
@@ -121,19 +120,53 @@
                         </select>
                         <input class="span-order-admin" type="text" name="half_carcasses_quantity" placeholder="50">
                     </div>
-                    <div class="p-2 btn item btn-item">
-                        <select class="products" name="by_product" id="container">
-                            {% for obj in by_product %}
-                                <option value={{ obj.pk }}>{{ obj }}</option>
-                            {% endfor %}
-                        </select>
-                        <input class="span-order-admin" type="text" name="by_product_quantity" placeholder="30">
-                    </div>
-                    <button class="btn hvr-shadow hvr-back-pulse" type="submit" name="confirm" value="True">
-                        Подтвердить
-                    </button>
-                </form>
             </div>
+
+            <div class="btn item btn-item">
+                <select class="products" name="by_product1" id="container">
+                    {% for bp in by_product %}
+                        <option value={{ bp.pk }}>{{ bp }}</option>
+                    {% endfor %}
+                </select>
+                <input class="span-order-admin" type="text" name="by_product1_quantity" placeholder="50">
+            </div>
+            <div class="btn item btn-item">
+                <select class="products" name="by_product2" id="container">
+                    {% for bp in by_product %}
+                        <option value={{ bp.pk }}>{{ bp }}</option>
+                    {% endfor %}
+                </select>
+                <input class="span-order-admin" type="text" name="by_product2_quantity" placeholder="50">
+            </div>
+            <div class="btn item btn-item">
+                <select class="products" name="by_product3" id="container">
+                    {% for bp in by_product %}
+                        <option value={{ bp.pk }}>{{ bp }}</option>
+                    {% endfor %}
+                </select>
+                <input class="span-order-admin" type="text" name="by_product3_quantity" placeholder="50">
+            </div>
+            <div class="btn item btn-item">
+                <select class="products" name="by_product4" id="container">
+                    {% for bp in by_product %}
+                        <option value={{ bp.pk }}>{{ bp }}</option>
+                    {% endfor %}
+                </select>
+                <input class="span-order-admin" type="text" name="by_product4_quantity" placeholder="50">
+            </div>
+            <div class="btn item btn-item">
+                <select class="products" name="by_product5" id="container">
+                    {% for bp in by_product %}
+                        <option value={{ bp.pk }}>{{ bp }}</option>
+                    {% endfor %}
+                </select>
+                <input class="span-order-admin" type="text" name="by_product5_quantity" placeholder="50">
+            </div>
+
+            <button class="btn hvr-shadow hvr-back-pulse" type="submit" name="confirm" value="True">
+                Подтвердить
+            </button>
+            </form>
         </nav>
     </div>
 </div>
