@@ -1,6 +1,6 @@
 {% include 'order/includes/inc_order.html' %}
 
-<div class="container nav">
+<div class="container nav pb-0">
     <div class="info-block btn">
         <div class="info-span">
             40
@@ -57,7 +57,7 @@
                             {% if day == 0 %}
                                 {#                                    <p></p>#}
                             {% else %}
-                                <div id="button" type="submit" class="calendar-data">{{ day }}</div>
+                                <a href=""><div id="button" type="submit" class="calendar-data">{{ day }}</div></a>
                                 <span class="span calendar-span-order"></span>
                             {% endif %}
                             {% for object in object_list %}
@@ -89,7 +89,7 @@
                 {% csrf_token %}
                 <nav class="ms-5">
                     <div class="nav">
-                        <div class="p-2 btn item">
+                        <div class="p-2 btn item item-last">
                             {{ object.half_carcasses }}
                             <input class="span-order-admin" type="text" name='half_carcasses_quantity'
                                    placeholder="max {{ object.half_carcasses_quantity }}">

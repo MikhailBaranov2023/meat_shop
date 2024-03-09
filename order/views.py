@@ -67,4 +67,10 @@ def contact(request):
 
 @login_required
 def complete_order(request):
-    return render(request, template_name='order/complete_order.html')
+    order_obj = Order.objects.filter(user=request.user).last()
+    bp_orders = ByProductOrders.objects.filter(order=order_obj.pk)
+    context = {
+        "order_obj": order_obj,
+        "bp_orders": bp_orders,
+    }
+    return render(request, template_name='order/complete_order.html', context=context)

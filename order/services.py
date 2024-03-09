@@ -34,6 +34,17 @@ def create_order(date_int: int, order_quantity_hc: int, description, user, bp_di
                                 quantity=new_quant)
                         else:
                             continue
+                    """сюда внедрять api frontpad"""
+                    date = order.date.date
+                    user = order.user_id
+                    """полутуши"""
+                    half_carcasses = order.date.half_carcasses
+                    half_carcasses_quantity = order.half_carcasses_quantity
+                    """субпродукты"""
+                    for bp in order.by_product:
+                        by_product_id = bp.pk
+                        bp_quantity = bp.quantity
+
                 return True
 
         return False

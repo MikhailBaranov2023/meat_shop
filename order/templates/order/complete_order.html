@@ -1,14 +1,90 @@
+{% load static %}
 {% include 'order/includes/inc_order.html' %}
-<div class="container">
-    <div class="col-12 mb-5 nav">
-        <a class='btn hvr-shadow hvr-back-pulse' href="{% url 'order:order_list' %}">Мои заказы</a>
-    </div>
-    <div class="row text-center nav" id="blockNone">
-        <div class="col-6 info footer-info mb-2">
-            <div class="info">
-                <h2 class="mb-2">Ваш заказ принят</h2>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <nav class="ms-5">
+        {% if user.is_staff %}
+            <div class="nav">
+                <div class="admin hvr-wobble-skew ml-2">
+                    Панель администратора
+                </div>
+                <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'product:create_date_current_month' %}">
+                    Установка нормы на день
+                </a>
+                <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'product:add_current_month' %}">
+                    Установка нормы на месяц
+                </a>
+                <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:logout' %}">
+                    Выход
+                </a>
+                <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:home' %}">
+                    Контакты
+                </a>
             </div>
-        </div>
-        <a class="p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:home' %}"> На главную</a>
-    </div>
+        {% else %}
+            {% if user.is_authenticated %}
+                <div class="nav">
+                    <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:order_list' %}">Мои заказы</a>
+                    <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'product:date_list' %}">Заказать</a>
+                    <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:profile' %}">Профиль</a>
+                    <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:contact' %}">Контакты</a>
+                    <div class="info menu">
+                        <div class="info">
+                            <div class="col-6 info footer-info mb-2">
+                             <div class="card-title mb-4 shadow-sm">
+                                <h3>Заказ сформирован</h3>
+                             </div>
+                                <div class="card-title mb-4 shadow-sm">
+                                    {% if order_obj.status == 'accepted' %}
+                                        <h4 class="info-title"> Принят в работу</h4>
+                                    {% elif order_obj.status == 'completed' %}
+                                        <h4 class="info-title">Исполнено</h4>
+                                    {% elif order_obj.status == 'cancel' %}
+                                        <h4 class="info-title">Заказ отменен</h4>
+                                    {% endif %}
+                                    <span class="my-0 font-weight-normal info-title-date">дата: {{ order_obj.date.date }} </span>
+                                </div>
+                                <div class="card-body mb-4 box-shadow">
+                                    <div class="info-grid">
+                                        <h5>{{ order_obj.date.half_carcasses }}- {{ order_obj.half_carcasses_quantity }}кг</h5>
+                                        {% if bp_orders.count == 0 %}
+                                        {% else %}
+                                            {% for bp in bp_orders %}
+                                                <h5>{{ bp.by_product.title }} - {{ bp.quantity }} кг</h5>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                    <h5 class="card-title">Описание
+                                        заказа: {{ order_obj.description| truncatechars:50 }}</h5>
+                                    <h5 class="text-muted card-title">Заказчик
+                                        : {{ order_obj.user.first_name }} {{ order_obj.user.last_name }}
+                                    </h5>
+                                    <h5>
+                                        Телефон - {{ order_obj.user.phone }}
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:logout' %}">Выход</a>
+                </div>
+            {% else %}
+                <div class="nav">
+                    <a class="menu p-2 btn btn-outline-primary hvr-shadow hvr-back-pulse"
+                       href="{% url 'users:login' %}">Мои заказы</a>
+                    <a class="menu p-2 btn btn-outline-primary hvr-shadow hvr-back-pulse"
+                       href="{% url 'users:login' %}">Заказать</a>
+                    <a class="menu p-2 btn btn-outline-primary hvr-shadow hvr-back-pulse"
+                       href="{% url 'order:contact' %}">Контакты</a>
+                    <div class="info">
+
+                        <h4 class="mb-2">{{ announcement }}</h4>
+
+                    </div>
+                    <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:login' %}">Вход</a>
+                </div>
+            {% endif %}
+        {% endif %}
+    </nav>
 </div>
+

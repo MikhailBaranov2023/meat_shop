@@ -2,10 +2,10 @@
 
 {% block content %}
     <div class="container">
-        <div class="col-12 mb-5 nav">
+        <div class="col-12 mb-5 w-300">
             <a class='btn hvr-shadow hvr-back-pulse' href="{% url 'product:date_list' %}">Cоздать заказ</a>
         </div>
-        <div class="row text-center nav" id="blockNone">
+        <div class="row text-center w-300" id="blockNone">
             {% for object in object_list %}
                 {% if object.date.date >= now %}
                     <div class="col-6 info footer-info mb-2">

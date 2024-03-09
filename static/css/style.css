@@ -196,18 +196,18 @@ svg {
 }
 
 .span-order {
-    width: 60px;
-    height: 45px;
+    width: 40px;
+    height: 30px;
     border-radius: 10px;
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
     color: black;
-    padding-top: 8px;
+    padding-top: 4px;
 }
 
 .data {
-    width: 150px;
-    height: 150px;
+    width: 90px;
+    height: 90px;
     border-radius: 20px;
     background: #bfbfbf;
     color: black;
@@ -219,7 +219,7 @@ svg {
     color: black;
     width: 100%;
     padding: 15px 0 0 15px;
-    font-size: 38px;
+    font-size: 30px;
 }
 
 .btn {
@@ -316,8 +316,15 @@ a:active {
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     margin-bottom: 10px;
+    color: black;
+    padding: 3px;
+    width: 190px;
+}
+
+.info-grid h5:first-child {
+        border-bottom: 1px solid black;
 }
 
 .btn-info {
