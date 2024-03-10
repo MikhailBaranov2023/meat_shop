@@ -313,7 +313,7 @@ def current_month(request):
 
 
 @login_required
-def make_order_current_month(request, pk):
+def make_order_current_month(request, day):
     if request.method == 'POST':
         all_keys = request.POST.keys()
         static_keys = ['csrfmiddlewaretoken', 'half_carcasses_quantity', 'description', 'date']
@@ -343,25 +343,88 @@ def make_order_current_month(request, pk):
                 return redirect(reverse_lazy('product:date_list'))
         except ValueError:
             redirect(reverse_lazy('product:date_list'))
-
-    date_item = get_object_or_404(Date, pk=pk)
+    # date_item = get_object_or_404(Date, pk=pk)
     date_all = Date.objects.all()
     calendar = create_calendar()
-    by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
-    context = {
-        'object': date_item,
-        'object_list': date_all,
-        'current_month': calendar[0],
-        'current_month_title': calendar[2],
-        'number_mount': calendar[4],
-        'by_product_items': by_product_items,
-    }
-    return render(request, template_name='product/date_list.html',
-                  context=context)
+    if day >= 10:
+        if calendar[4] > 10:
+            detect_date = f"{datetime.date.today().year}-{calendar[4]}-{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'current_month': calendar[0],
+                    'current_month_title': calendar[2],
+                    'number_mount': calendar[4],
+                    'by_product_items': by_product_items,
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:current_month'))
+        else:
+            detect_date = f"{datetime.date.today().year}-0{calendar[4]}-{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'current_month': calendar[0],
+                    'current_month_title': calendar[2],
+                    'number_mount': calendar[4],
+                    'by_product_items': by_product_items,
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:current_month'))
+    else:
+        if calendar[4] >= 10:
+            detect_date = f"{datetime.date.today().year}-{calendar[4]}-0{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'current_month': calendar[0],
+                    'current_month_title': calendar[2],
+                    'number_mount': calendar[4],
+                    'by_product_items': by_product_items,
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:current_month'))
+        else:
+            detect_date = f"{datetime.date.today().year}-0{calendar[4]}-0{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'current_month': calendar[0],
+                    'current_month_title': calendar[2],
+                    'number_mount': calendar[4],
+                    'by_product_items': by_product_items,
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:current_month'))
+
 
 
 @login_required
-def make_order_next_month(request, pk):
+def make_order_next_month(request, day):
     if request.method == 'POST':
         all_keys = request.POST.keys()
         static_keys = ['csrfmiddlewaretoken', 'half_carcasses_quantity', 'description', 'date']
@@ -392,18 +455,84 @@ def make_order_next_month(request, pk):
         except ValueError:
             redirect(reverse_lazy('product:date_list'))
 
-    date_item = get_object_or_404(Date, pk=pk)
     date_all = Date.objects.all()
     calendar = create_calendar()
-    by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
-    context = {
-        'object': date_item,
-        'object_list': date_all,
-        'next_month': calendar[1],
-        'next_month_title': calendar[3],
-        'number_mount': calendar[4] + 1,
-        'by_product_items': by_product_items,
+    number_mount = calendar[4] + 1
+    if day >= 10:
+        if number_mount >= 10:
+            detect_date = f"{datetime.date.today().year}-{number_mount}-{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'next_month': calendar[1],
+                    'next_month_title': calendar[3],
+                    'number_mount': number_mount,
+                    'by_product_items': by_product_items,
 
-    }
-    return render(request, template_name='product/date_list.html',
-                  context=context)
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:next_month'))
+        else:
+            detect_date = f"{datetime.date.today().year}-0{number_mount}-{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'next_month': calendar[1],
+                    'next_month_title': calendar[3],
+                    'number_mount': number_mount,
+                    'by_product_items': by_product_items,
+
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:next_month'))
+    else:
+        if number_mount >= 10:
+            detect_date = f"{datetime.date.today().year}-{number_mount}-0{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'next_month': calendar[1],
+                    'next_month_title': calendar[3],
+                    'number_mount': number_mount,
+                    'by_product_items': by_product_items,
+
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:next_month'))
+        else:
+            detect_date = f"{datetime.date.today().year}-0{number_mount}-0{day}"
+            date_time_obj = datetime.datetime.strptime(detect_date, '%Y-%m-%d')
+            if Date.objects.filter(date=date_time_obj.date()).exists():
+                date_item = get_object_or_404(Date, date=date_time_obj.date())
+                by_product_items = ByProductItem.objects.filter(date_id=date_item.pk)
+                context = {
+                    'object': date_item,
+                    'object_list': date_all,
+                    'next_month': calendar[1],
+                    'next_month_title': calendar[3],
+                    'number_mount': number_mount,
+                    'by_product_items': by_product_items,
+
+                }
+                return render(request, template_name='product/date_list.html',
+                              context=context)
+            else:
+                return redirect(reverse_lazy('product:next_month'))
