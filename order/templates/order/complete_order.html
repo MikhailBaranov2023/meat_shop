@@ -28,9 +28,7 @@
                     <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'product:date_list' %}">Заказать</a>
                     <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:profile' %}">Профиль</a>
                     <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'order:contact' %}">Контакты</a>
-                    <div class="info menu">
-                        <div class="info">
-                            <div class="col-6 info footer-info mb-2">
+                            <div class="col-6 info footer-info">
                              <div class="card-title mb-4 shadow-sm">
                                 <h3>Заказ сформирован</h3>
                              </div>
@@ -65,9 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <a class="menu p-2 btn hvr-shadow hvr-back-pulse" href="{% url 'users:logout' %}">Выход</a>
-                </div>
             {% else %}
                 <div class="nav">
                     <a class="menu p-2 btn btn-outline-primary hvr-shadow hvr-back-pulse"
@@ -87,4 +83,3 @@
         {% endif %}
     </nav>
 </div>
-

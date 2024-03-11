@@ -4,11 +4,6 @@
     margin: 0 auto;
 }
 
-@font-face {
-    font-family: Stengazeta;
-    src: url("../fonts/Stengazeta-Regular.ttf");
-}
-
 body {
     background: #2e3132;
     font-family: Stengazeta sans-serif;
@@ -334,7 +329,7 @@ a:active {
 }
 
 .footer-info {
-    padding: 20px 0 10px;
+    padding: 10px 0 10px;
 }
 
 .menu {
@@ -376,10 +371,6 @@ a:active {
     padding: 0;
 }
 
-/*.item:first-child {*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
 .item-last {
     margin-bottom: 20px;
 }
@@ -392,8 +383,25 @@ a:active {
     background: #bfbfbf;
     border-radius: 50px;
     text-align: center;
-    /*padding-top: 10px;*/
     border: none;
+}
+
+.icons {
+    border: none;
+    background: #bfbfbf;
+    font-size: 30px;
+}
+
+#plus{
+    position: absolute;
+    top: 6px;
+    right: 11px;
+}
+
+#minus {
+    position: absolute;
+    top: 4px;
+    right: 69px;
 }
 
 .products {
@@ -419,6 +427,12 @@ a:active {
 
 ::placeholder {
     color: rgba(255, 0, 0, 0.6);
+    margin-right: 22px;
+}
+
+#carcass,
+#products {
+    background: #bfbfbf;
 }
 
 .hover:hover {
@@ -476,7 +490,6 @@ a:active {
 
 .map {
     display: grid;
-    justify-content: space-between;
 }
 
 .map-title {

@@ -29,26 +29,20 @@ def create_order(date_int: int, order_quantity_hc: int, description, user, bp_di
                             order.by_product.add(by_product, through_defaults={'quantity': int(bp_dict[k])})
                             byproduct_item_quantity = ByProductItem.objects.filter(date_id=order.date.pk,
                                                                                    by_product=by_product).get().quantity
-                            if byproduct_item_quantity >= int(bp_dict[k]):
+                            if byproduct_item_quantity < int(bp_dict[k]):
+                                date_hc_quantity_after_order = Date.objects.filter(
+                                    pk=date_int).get().half_carcasses_quantity
+                                cancel_hc_quantity = date_hc_quantity_after_order + order_quantity_hc
+                                Date.objects.filter(pk=date_int).update(half_carcasses_quantity=cancel_hc_quantity)
+                                order.delete()
+                                return False
+                            else:
                                 new_quant = byproduct_item_quantity - int(bp_dict[k])
                                 ByProductItem.objects.filter(date_id=order.date.pk, by_product=by_product).update(
                                     quantity=new_quant)
-                            else:
-                                return False
                         else:
                             continue
-                """сюда внедрять api frontpad"""
-                date = order.date.date
-                user = order.user_id
-                """полутуши"""
-                half_carcasses = order.date.half_carcasses
-                half_carcasses_quantity = order.half_carcasses_quantity
-                """субпродукты"""
-                for bp in order.by_product:
-                    by_product_id = bp.pk
-                    bp_quantity = bp.quantity
                 return True
-
         return False
     else:
         return False
