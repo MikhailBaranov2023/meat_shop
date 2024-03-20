@@ -9,7 +9,7 @@ class AdminHalfCarcasses(admin.ModelAdmin):
 
 @admin.register(ByProduct)
 class AdminByProduct(admin.ModelAdmin):
-    list_display = ('title', 'price',)
+    list_display = ('id','title', 'price',)
 
 
 @admin.register(Date)

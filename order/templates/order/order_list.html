@@ -25,10 +25,17 @@
                                 {% if bp_orders.count == 0 %}
                                 {% else %}
                                     {% for bp in bp_orders %}
-                                        {% if bp.order.date == object.date %}
-                                            <h5>{{ bp.by_product.title}} - {{ bp.quantity }} </h5>
+                                        {% if bp.by_product.kg is True %}
+                                            {% if bp.order.pk == object.pk %}
+                                                <h5>{{ bp.by_product }} - {{ bp.quantity }}шт </h5>
+                                            {% endif %}
+                                        {% else %}
+                                            {% if bp.order.pk == object.pk %}
+                                                <h5>{{ bp.by_product }} - {{ bp.quantity }}шт </h5>
+                                            {% endif %}
                                         {% endif %}
                                     {% endfor %}
+
                                 {% endif %}
                             </div>
                             <h5 class="card-title">Описание заказа: {{ object.description| truncatechars:50 }}</h5>

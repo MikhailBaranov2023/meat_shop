@@ -1,12 +1,11 @@
 from django.core.management import BaseCommand
 from users.models import User
 
-
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
         user = User.objects.create(
-            phone='9998502717',
+            phone='your phone',
             first_name='Your first name',
             last_name='Your last name',
             city='Your city',
@@ -14,5 +13,5 @@ class Command(BaseCommand):
             is_superuser=True
         )
 
-        user.set_password('1qazxsw23edc')
+        user.set_password('your password')
         user.save()

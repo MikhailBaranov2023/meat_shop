@@ -73,7 +73,9 @@ def parse_month(dict_month: dict):
 
 
 def create_multiple_date(date_list: list, half_carcasses_int, half_carcasses_quantity, bp1, bp1q, bp2, bp2q, bp3, bp3q,
-                         bp4, bp4q, bp5, bp5q):
+                         bp4, bp4q, bp5, bp5q, bp6, bp6q, bp7, bp7q, bp8, bp8q, bp9, bp9q, bp10, bp10q, bp11, bp11q,
+                         bp12, bp12q, bp13, bp13q, bp14, bp14q, bp15, bp15q, bp16, bp16q, bp17, bp17q, bp18, bp18q,
+                         bp19, bp19q, bp20, bp20q):
     if ByProduct.objects.filter(pk=int(bp1)).exists():
         bp1 = ByProduct.objects.filter(pk=int(bp1)).get().pk
     if ByProduct.objects.filter(pk=int(bp2)).exists():
@@ -84,6 +86,36 @@ def create_multiple_date(date_list: list, half_carcasses_int, half_carcasses_qua
         bp4 = ByProduct.objects.filter(pk=int(bp4)).get().pk
     if ByProduct.objects.filter(pk=int(bp5)).exists():
         bp5 = ByProduct.objects.filter(pk=int(bp5)).get().pk
+    if ByProduct.objects.filter(pk=int(bp6)).exists():
+        bp6 = ByProduct.objects.filter(pk=int(bp6)).get().pk
+    if ByProduct.objects.filter(pk=int(bp7)).exists():
+        bp7 = ByProduct.objects.filter(pk=int(bp7)).get().pk
+    if ByProduct.objects.filter(pk=int(bp8)).exists():
+        bp8 = ByProduct.objects.filter(pk=int(bp8)).get().pk
+    if ByProduct.objects.filter(pk=int(bp9)).exists():
+        bp9 = ByProduct.objects.filter(pk=int(bp9)).get().pk
+    if ByProduct.objects.filter(pk=int(bp10)).exists():
+        bp10 = ByProduct.objects.filter(pk=int(bp10)).get().pk
+    if ByProduct.objects.filter(pk=int(bp11)).exists():
+        bp11 = ByProduct.objects.filter(pk=int(bp11)).get().pk
+    if ByProduct.objects.filter(pk=int(bp12)).exists():
+        bp12 = ByProduct.objects.filter(pk=int(bp12)).get().pk
+    if ByProduct.objects.filter(pk=int(bp13)).exists():
+        bp13 = ByProduct.objects.filter(pk=int(bp13)).get().pk
+    if ByProduct.objects.filter(pk=int(bp14)).exists():
+        bp14 = ByProduct.objects.filter(pk=int(bp14)).get().pk
+    if ByProduct.objects.filter(pk=int(bp15)).exists():
+        bp15 = ByProduct.objects.filter(pk=int(bp15)).get().pk
+    if ByProduct.objects.filter(pk=int(bp16)).exists():
+        bp16 = ByProduct.objects.filter(pk=int(bp16)).get().pk
+    if ByProduct.objects.filter(pk=int(bp17)).exists():
+        bp17 = ByProduct.objects.filter(pk=int(bp17)).get().pk
+    if ByProduct.objects.filter(pk=int(bp18)).exists():
+        bp18 = ByProduct.objects.filter(pk=int(bp18)).get().pk
+    if ByProduct.objects.filter(pk=int(bp19)).exists():
+        bp19 = ByProduct.objects.filter(pk=int(bp19)).get().pk
+    if ByProduct.objects.filter(pk=int(bp20)).exists():
+        bp20 = ByProduct.objects.filter(pk=int(bp20)).get().pk
 
     for d in date_list:
         if d < datetime.date.today():
@@ -104,3 +136,33 @@ def create_multiple_date(date_list: list, half_carcasses_int, half_carcasses_qua
                     date.by_product.add(bp4, through_defaults={'quantity': bp4q})
                 if bp5q > 0:
                     date.by_product.add(bp5, through_defaults={'quantity': bp5q})
+                if bp6q > 0:
+                    date.by_product.add(bp6, through_defaults={'quantity': bp6q})
+                if bp7q > 0:
+                    date.by_product.add(bp7, through_defaults={'quantity': bp7q})
+                if bp8q > 0:
+                    date.by_product.add(bp8, through_defaults={'quantity': bp8q})
+                if bp9q > 0:
+                    date.by_product.add(bp9, through_defaults={'quantity': bp9q})
+                if bp10q > 0:
+                    date.by_product.add(bp10, through_defaults={'quantity': bp10q})
+                if bp11q > 0:
+                    date.by_product.add(bp11, through_defaults={'quantity': bp11q})
+                if bp12q > 0:
+                    date.by_product.add(bp12, through_defaults={'quantity': bp12q})
+                if bp13q > 0:
+                    date.by_product.add(bp13, through_defaults={'quantity': bp13q})
+                if bp14q > 0:
+                    date.by_product.add(bp14, through_defaults={'quantity': bp14q})
+                if bp15q > 0:
+                    date.by_product.add(bp15, through_defaults={'quantity': bp15q})
+                if bp16q > 0:
+                    date.by_product.add(bp16, through_defaults={'quantity': bp16q})
+                if bp17q > 0:
+                    date.by_product.add(bp17, through_defaults={'quantity': bp17q})
+                if bp18q > 0:
+                    date.by_product.add(bp18, through_defaults={'quantity': bp18q})
+                if bp19q > 0:
+                    date.by_product.add(bp19, through_defaults={'quantity': bp19q})
+                if bp20q > 0:
+                    date.by_product.add(bp20, through_defaults={'quantity': bp20q})

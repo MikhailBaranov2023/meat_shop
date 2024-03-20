@@ -58,11 +58,98 @@ def create_date_current_month(request, date_list=[]):
                         by_product5_quantity = 0
                     else:
                         by_product5_quantity = int(request.POST['by_product5_quantity'])
+                    by_product6 = request.POST['by_product6']
+                    if request.POST['by_product6_quantity'] == '':
+                        by_product6_quantity = 0
+                    else:
+                        by_product6_quantity = int(request.POST['by_product6_quantity'])
+                    by_product7 = request.POST['by_product7']
+                    if request.POST['by_product7_quantity'] == '':
+                        by_product7_quantity = 0
+                    else:
+                        by_product7_quantity = int(request.POST['by_product7_quantity'])
+                    by_product8 = request.POST['by_product8']
+                    if request.POST['by_product8_quantity'] == '':
+                        by_product8_quantity = 0
+                    else:
+                        by_product8_quantity = int(request.POST['by_product8_quantity'])
+                    by_product9 = request.POST['by_product9']
+                    if request.POST['by_product9_quantity'] == '':
+                        by_product9_quantity = 0
+                    else:
+                        by_product9_quantity = int(request.POST['by_product9_quantity'])
+                    by_product10 = request.POST['by_product10']
+                    if request.POST['by_product10_quantity'] == '':
+                        by_product10_quantity = 0
+                    else:
+                        by_product10_quantity = int(request.POST['by_product10_quantity'])
+                    by_product11 = request.POST['by_product11']
+                    if request.POST['by_product11_quantity'] == '':
+                        by_product11_quantity = 0
+                    else:
+                        by_product11_quantity = int(request.POST['by_product11_quantity'])
+                    by_product12 = request.POST['by_product12']
+                    if request.POST['by_product12_quantity'] == '':
+                        by_product12_quantity = 0
+                    else:
+                        by_product12_quantity = int(request.POST['by_product12_quantity'])
+                    by_product13 = request.POST['by_product13']
+                    if request.POST['by_product13_quantity'] == '':
+                        by_product13_quantity = 0
+                    else:
+                        by_product13_quantity = int(request.POST['by_product13_quantity'])
+                    by_product14 = request.POST['by_product14']
+                    if request.POST['by_product14_quantity'] == '':
+                        by_product14_quantity = 0
+                    else:
+                        by_product14_quantity = int(request.POST['by_product14_quantity'])
+                    by_product15 = request.POST['by_product15']
+                    if request.POST['by_product15_quantity'] == '':
+                        by_product15_quantity = 0
+                    else:
+                        by_product15_quantity = int(request.POST['by_product15_quantity'])
+                    by_product16 = request.POST['by_product16']
+                    if request.POST['by_product16_quantity'] == '':
+                        by_product16_quantity = 0
+                    else:
+                        by_product16_quantity = int(request.POST['by_product16_quantity'])
+                    by_product17 = request.POST['by_product17']
+                    if request.POST['by_product17_quantity'] == '':
+                        by_product17_quantity = 0
+                    else:
+                        by_product17_quantity = int(request.POST['by_product17_quantity'])
+                    by_product18 = request.POST['by_product18']
+                    if request.POST['by_product18_quantity'] == '':
+                        by_product18_quantity = 0
+                    else:
+                        by_product18_quantity = int(request.POST['by_product18_quantity'])
+                    by_product19 = request.POST['by_product19']
+                    if request.POST['by_product19_quantity'] == '':
+                        by_product19_quantity = 0
+                    else:
+                        by_product19_quantity = int(request.POST['by_product19_quantity'])
+                    by_product20 = request.POST['by_product20']
+                    if request.POST['by_product20_quantity'] == '':
+                        by_product20_quantity = 0
+                    else:
+                        by_product20_quantity = int(request.POST['by_product20_quantity'])
                     create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
                                          half_carcasses_quantity=half_carcasses_quantity, bp1=by_product1,
                                          bp1q=by_product1_quantity, bp2=by_product2, bp2q=by_product2_quantity,
                                          bp3=by_product3, bp3q=by_product3_quantity, bp4=by_product4,
-                                         bp4q=by_product4_quantity, bp5=by_product5, bp5q=by_product5_quantity)
+                                         bp4q=by_product4_quantity, bp5=by_product5, bp5q=by_product5_quantity,
+                                         bp6=by_product6, bp6q=by_product6_quantity, bp7=by_product7,
+                                         bp7q=by_product7_quantity, bp8=by_product8, bp8q=by_product8_quantity,
+                                         bp9=by_product9, bp9q=by_product9_quantity, bp10=by_product10,
+                                         bp10q=by_product10_quantity, bp11=by_product11, bp11q=by_product11_quantity,
+                                         bp12=by_product12, bp12q=by_product12_quantity, bp13=by_product13,
+                                         bp13q=by_product13_quantity, bp14=by_product14, bp14q=by_product14_quantity,
+                                         bp15=by_product15,
+                                         bp15q=by_product15_quantity, bp16=by_product16, bp16q=by_product16_quantity,
+                                         bp17=by_product17,
+                                         bp17q=by_product17_quantity, bp18=by_product18, bp18q=by_product18_quantity,
+                                         bp19=by_product19, bp19q=by_product19_quantity, bp20=by_product20,
+                                         bp20q=by_product20_quantity)
 
                     date_list = []
             except ValueError:
@@ -131,15 +218,102 @@ def create_date_next_month(request, date_list=[]):
                         by_product5_quantity = 0
                     else:
                         by_product5_quantity = int(request.POST['by_product5_quantity'])
+                    by_product6 = request.POST['by_product6']
+                    if request.POST['by_product6_quantity'] == '':
+                        by_product6_quantity = 0
+                    else:
+                        by_product6_quantity = int(request.POST['by_product6_quantity'])
+                    by_product7 = request.POST['by_product7']
+                    if request.POST['by_product7_quantity'] == '':
+                        by_product7_quantity = 0
+                    else:
+                        by_product7_quantity = int(request.POST['by_product7_quantity'])
+                    by_product8 = request.POST['by_product8']
+                    if request.POST['by_product8_quantity'] == '':
+                        by_product8_quantity = 0
+                    else:
+                        by_product8_quantity = int(request.POST['by_product8_quantity'])
+                    by_product9 = request.POST['by_product9']
+                    if request.POST['by_product9_quantity'] == '':
+                        by_product9_quantity = 0
+                    else:
+                        by_product9_quantity = int(request.POST['by_product9_quantity'])
+                    by_product10 = request.POST['by_product10']
+                    if request.POST['by_product10_quantity'] == '':
+                        by_product10_quantity = 0
+                    else:
+                        by_product10_quantity = int(request.POST['by_product10_quantity'])
+                    by_product11 = request.POST['by_product11']
+                    if request.POST['by_product11_quantity'] == '':
+                        by_product11_quantity = 0
+                    else:
+                        by_product11_quantity = int(request.POST['by_product11_quantity'])
+                    by_product12 = request.POST['by_product12']
+                    if request.POST['by_product12_quantity'] == '':
+                        by_product12_quantity = 0
+                    else:
+                        by_product12_quantity = int(request.POST['by_product12_quantity'])
+                    by_product13 = request.POST['by_product13']
+                    if request.POST['by_product13_quantity'] == '':
+                        by_product13_quantity = 0
+                    else:
+                        by_product13_quantity = int(request.POST['by_product13_quantity'])
+                    by_product14 = request.POST['by_product14']
+                    if request.POST['by_product14_quantity'] == '':
+                        by_product14_quantity = 0
+                    else:
+                        by_product14_quantity = int(request.POST['by_product14_quantity'])
+                    by_product15 = request.POST['by_product15']
+                    if request.POST['by_product15_quantity'] == '':
+                        by_product15_quantity = 0
+                    else:
+                        by_product15_quantity = int(request.POST['by_product15_quantity'])
+                    by_product16 = request.POST['by_product16']
+                    if request.POST['by_product16_quantity'] == '':
+                        by_product16_quantity = 0
+                    else:
+                        by_product16_quantity = int(request.POST['by_product16_quantity'])
+                    by_product17 = request.POST['by_product17']
+                    if request.POST['by_product17_quantity'] == '':
+                        by_product17_quantity = 0
+                    else:
+                        by_product17_quantity = int(request.POST['by_product17_quantity'])
+                    by_product18 = request.POST['by_product18']
+                    if request.POST['by_product18_quantity'] == '':
+                        by_product18_quantity = 0
+                    else:
+                        by_product18_quantity = int(request.POST['by_product18_quantity'])
+                    by_product19 = request.POST['by_product19']
+                    if request.POST['by_product19_quantity'] == '':
+                        by_product19_quantity = 0
+                    else:
+                        by_product19_quantity = int(request.POST['by_product19_quantity'])
+                    by_product20 = request.POST['by_product20']
+                    if request.POST['by_product20_quantity'] == '':
+                        by_product20_quantity = 0
+                    else:
+                        by_product20_quantity = int(request.POST['by_product20_quantity'])
                     create_multiple_date(date_list=date_list, half_carcasses_int=half_carcasses_int,
                                          half_carcasses_quantity=half_carcasses_quantity, bp1=by_product1,
                                          bp1q=by_product1_quantity, bp2=by_product2, bp2q=by_product2_quantity,
                                          bp3=by_product3, bp3q=by_product3_quantity, bp4=by_product4,
-                                         bp4q=by_product4_quantity, bp5=by_product5, bp5q=by_product5_quantity)
+                                         bp4q=by_product4_quantity, bp5=by_product5, bp5q=by_product5_quantity,
+                                         bp6=by_product6, bp6q=by_product6_quantity, bp7=by_product7,
+                                         bp7q=by_product7_quantity, bp8=by_product8, bp8q=by_product8_quantity,
+                                         bp9=by_product9, bp9q=by_product9_quantity, bp10=by_product10,
+                                         bp10q=by_product10_quantity, bp11=by_product11, bp11q=by_product11_quantity,
+                                         bp12=by_product12, bp12q=by_product12_quantity, bp13=by_product13,
+                                         bp13q=by_product13_quantity, bp14=by_product14, bp14q=by_product14_quantity,
+                                         bp15=by_product15,
+                                         bp15q=by_product15_quantity, bp16=by_product16, bp16q=by_product16_quantity,
+                                         bp17=by_product17,
+                                         bp17q=by_product17_quantity, bp18=by_product18, bp18q=by_product18_quantity,
+                                         bp19=by_product19, bp19q=by_product19_quantity, bp20=by_product20,
+                                         bp20q=by_product20_quantity)
 
                     date_list = []
             except ValueError:
-                redirect(reverse_lazy('product:create_date_next_month'))
+                redirect(reverse_lazy('product:create_date_current_month'))
     else:
         return redirect('order:home')
 
@@ -340,9 +514,9 @@ def make_order_current_month(request, day):
                             description=description, user=user, bp_dict=bp_dict) is True:
                 return redirect(reverse_lazy('order:complete_order'))
             else:
-                return redirect(reverse_lazy('product:date_list'))
+                return redirect(reverse_lazy('order:order_is_not_created'))
         except ValueError:
-            redirect(reverse_lazy('product:date_list'))
+            redirect(reverse_lazy('order:order_is_not_created'))
     # date_item = get_object_or_404(Date, pk=pk)
     date_all = Date.objects.all()
     calendar = create_calendar()
@@ -422,7 +596,6 @@ def make_order_current_month(request, day):
                 return redirect(reverse_lazy('product:current_month'))
 
 
-
 @login_required
 def make_order_next_month(request, day):
     if request.method == 'POST':
@@ -451,9 +624,9 @@ def make_order_next_month(request, day):
                             description=description, user=user, bp_dict=bp_dict) is True:
                 return redirect(reverse_lazy('order:complete_order'))
             else:
-                return redirect(reverse_lazy('product:date_list'))
+                return redirect(reverse_lazy('order:order_is_not_created'))
         except ValueError:
-            redirect(reverse_lazy('product:date_list'))
+            redirect(reverse_lazy('order:order_is_not_created'))
 
     date_all = Date.objects.all()
     calendar = create_calendar()

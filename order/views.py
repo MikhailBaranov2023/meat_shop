@@ -17,8 +17,9 @@ class OderListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         if self.request.user.is_staff:
-            return queryset  # Если есть право доступа, то пользователь видит все заказы
-        return queryset.filter(user=self.request.user)
+            return queryset.order_by('user', 'status',
+                                     'date')  # Если есть право доступа, то пользователь видит все заказы
+        return queryset.filter(user=self.request.user).order_by("status", 'date')
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -74,3 +75,8 @@ def complete_order(request):
         "bp_orders": bp_orders,
     }
     return render(request, template_name='order/complete_order.html', context=context)
+
+
+@login_required
+def order_is_not_created(request):
+    return render(request, template_name='order/order_is_not_created.html')

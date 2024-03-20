@@ -13,12 +13,12 @@ pip install - r requirements.txt
 создайте и примините миграции 
 
 python manage.py makemigrations
-python mange.py migrate
+python manage.py migrate
 
 перейдите к файлу csu.py по пути  .users/management/commands/csu.py
 и заполните в нем данные для создания пользователя-администратора
 
-Создайте супер-пользователя командой python manage.py csu
+Создайте супер-пользователя командой - python manage.py csu
 
 после этого можно запускать проект командой pythone manage.py runserver
 
